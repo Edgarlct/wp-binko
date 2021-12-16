@@ -42,7 +42,7 @@
         </div>
     </div>
 </nav>
-<div class="bg-primary px-3 py-6">
+<header class="bg-primary px-3 py-6">
     <div class="container-xl d-flex justify-content-between align-items-center text-white">
         <div class="col-7 px-0">
             <h1 class="font-weight-bold mt-0 test">Binko, la poubelle intelligente</h1>
@@ -82,6 +82,29 @@
             </div>
         </div>
     </div>
-</div>
+</header>
+<section>
+    <div>
+        <p class="fs-7 font-weight-bold">Multipliez par <span class="color-secondary fs-10">3</span> votre investissement initial</p>
+        <p class="ff-ssp fs-6">Simulez votre investissement</p>
+        <from>
+            <label for="amount" class="ff-roboto">Montant investit :</label>
+            <div>
+                <input type="text" name="amount" placeholder="0">
+                <span>€</span>
+            </div>
+            <input type="submit" value="CALCULER">
+        </from>
+        <div>
+            <a href="#">CONTRAT INVESTISSEUR (PDF)</a>
+        </div>
+        <p>Je recevrais tous les trimestres :</p>
+        <p><span>0%</span> du chiffre d’affaires pendant 5 ans </p>
+        <p>Total sur 5 ans de : <span>0€</span></p>
+    </div>
+    <div>
+        <p>Graph</p>
+    </div>
+</section>
 </body>
 </html>
