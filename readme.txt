@@ -49,3 +49,24 @@ This theme bundles the following third-party resources:
 * Font Awesome: https://fontawesome.com/v4.7/license/ (Font: SIL OFL 1.1, (S)CSS: MIT)
 * Bootstrap: http://getbootstrap.com | https://github.com/twbs/bootstrap/blob/master/LICENSE (MIT)
 * WP Bootstrap Navwalker by Edward McIntyre & William Patton: https://github.com/wp-bootstrap/wp-bootstrap-navwalker (GNU GPLv3)
+
+
+### Class personnaliser
+
+fs-2 : 0.75rem;
+
+fs-3 : 1rem;
+
+fs-4 : 1.25rem;
+
+fs-5 : 1.5rem;
+
+fs-6 : 1.75rem;
+
+fs-7 : 2rem;
+
+fs-8 : 2.25rem;
+
+fs-9 : 2.5rem;
+
+fs-10 : 3rem;
