@@ -29,7 +29,15 @@ Do not modify the parent Understrap theme. Instead, download a copy of the Under
 Full developer documentation: https://docs.understrap.com
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 
+.ff-ssp{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.ff-roboto{
+    font-family: 'Roboto', sans-serif;
+}
 
 .h-16px{
     height: 16px;
@@ -40,5 +48,75 @@ Full developer documentation: https://docs.understrap.com
 }
 
 .bg-primary{
+    background-color: #04364F !important;
+}
 
+.bg-secondary{
+    background-color: #3FC2CA !important;
+}
+
+.border-secondary{
+    border-color: #3FC2CA !important;
+}
+
+.btn-secondary{
+    background-color: #3FC2CA !important;
+    border-color: #3FC2CA !important;
+    color: white;
+}
+
+.btn-secondary:hover{
+    background-color: #2EA1A8 !important;
+    border-color: #2EA1A8 !important;
+}
+
+.btn-outline-secondary{
+    border-color: #3FC2CA !important;
+}
+
+.btn-outline-secondary:hover{
+    border-color: #3FC2CA !important;
+    background-color: #3FC2CA !important;
+}
+
+.video{
+    width: 100%;
+    height: 380px;
+}
+
+.py-6{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.fs-2{
+    font-size: 0.75rem;
+}
+
+.fs-4{
+    font-size: 1.25rem;
+}
+
+.fs-6{
+    font-size: 1.75rem;
+}
+
+.fs-7{
+    font-size: 2rem;
+}
+
+.btn-invest, .btn-invest:hover, .btn-invest:visited{
+    color: white;
+    text-decoration: none;
+}
+
+.font-weight-medium{
+    font-weight: 500;
+}
+
+h1, h2,h3, h4{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+p{
+    font-family: 'Roboto', sans-serif;
 }
