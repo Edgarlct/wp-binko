@@ -83,27 +83,29 @@
         </div>
     </div>
 </header>
-<section>
-    <div>
+<section class="d-flex flex-column justify-content-center w-fit mx-auto">
+    <div class="d-flex justify-content-center flex-column align-items-center mt-6">
         <p class="fs-7 font-weight-bold">Multipliez par <span class="color-secondary fs-10">3</span> votre investissement initial</p>
         <p class="ff-ssp fs-6">Simulez votre investissement</p>
-        <from>
+        <from class="w-75">
             <label for="amount" class="ff-roboto">Montant investit :</label>
-            <div>
-                <input type="text" name="amount" placeholder="0">
-                <span>€</span>
+            <div class="d-flex position-relative mb-3">
+                <input class="w-100 border-primary rounded pl-1 py-2" type="text" name="amount" placeholder="0">
+                <span class="position-absolute p-right mt-2">€</span>
             </div>
-            <input type="submit" value="CALCULER">
+            <input class="w-100 btn btn-primary" type="submit" value="CALCULER">
         </from>
-        <div>
-            <a href="#">CONTRAT INVESTISSEUR (PDF)</a>
+        <div class="w-75 mt-3">
+            <a href="#" class="btn btn-outline-primary w-100">CONTRAT INVESTISSEUR (PDF)</a>
         </div>
-        <p>Je recevrais tous les trimestres :</p>
-        <p><span>0%</span> du chiffre d’affaires pendant 5 ans </p>
-        <p>Total sur 5 ans de : <span>0€</span></p>
     </div>
-    <div>
-        <p>Graph</p>
+    <div class="ff-ssp w-75 mx-auto my-6">
+        <p>Je recevrais tous les trimestres :</p>
+        <p><span class="fs-5 color-secondary font-weight-bold">0%</span> du chiffre d’affaires pendant 5 ans </p>
+        <p>Total sur 5 ans de : <span class="fs-5 color-secondary font-weight-bold">0€</span></p>
+        <div class="graph bg-secondary">
+            <p>Graph</p>
+        </div>
     </div>
 </section>
 </body>

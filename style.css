@@ -55,6 +55,18 @@ Full developer documentation: https://docs.understrap.com
     background-color: #3FC2CA !important;
 }
 
+.color-primary{
+    color: #04364F !important;
+}
+
+.color-secondary{
+    color: #3FC2CA !important;
+}
+
+.border-primary{
+    border-color: #04364F !important;
+}
+
 .border-secondary{
     border-color: #3FC2CA !important;
 }
@@ -70,6 +82,17 @@ Full developer documentation: https://docs.understrap.com
     border-color: #2EA1A8 !important;
 }
 
+.btn-primary{
+    background-color: #04364F !important;
+    border-color: #04364F !important;
+    color: white;
+}
+
+.btn-primary:hover{
+    background-color: #032B3F !important;
+    border-color: #032B3F !important;
+}
+
 .btn-outline-secondary{
     border-color: #3FC2CA !important;
 }
@@ -77,6 +100,17 @@ Full developer documentation: https://docs.understrap.com
 .btn-outline-secondary:hover{
     border-color: #3FC2CA !important;
     background-color: #3FC2CA !important;
+}
+
+.btn-outline-primary{
+    border-color: #04364F !important;
+    color: #04364F !important;
+}
+
+.btn-outline-primary:hover{
+    background-color: #032B3F !important;
+    border-color: #032B3F !important;
+    color: white !important;
 }
 
 .video{
@@ -89,6 +123,15 @@ Full developer documentation: https://docs.understrap.com
     padding-bottom: 4rem;
 }
 
+.my-6{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.mt-6{
+    margin-top: 4rem;
+}
+
 .fs-2{
     font-size: 0.75rem;
 }
@@ -97,12 +140,33 @@ Full developer documentation: https://docs.understrap.com
     font-size: 1.25rem;
 }
 
+.fs-5{
+    font-size: 1.5rem;
+}
+
 .fs-6{
     font-size: 1.75rem;
 }
 
 .fs-7{
     font-size: 2rem;
+}
+
+.fs-8{
+    font-size: 2.25rem;
+}
+
+.fs-9{
+    font-size: 2.5rem;
+}
+
+.fs-10{
+    font-size: 3rem;
+}
+
+.w-fit{
+    width: -moz-fit-content;
+    width: fit-content;
 }
 
 .btn-invest, .btn-invest:hover, .btn-invest:visited{
@@ -119,4 +183,13 @@ h1, h2,h3, h4{
 }
 p{
     font-family: 'Roboto', sans-serif;
+}
+
+.p-right{
+    right: 10px;
+}
+
+.graph{
+    height: 150px;
+    width: 100%;
 }
