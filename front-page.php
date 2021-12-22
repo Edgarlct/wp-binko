@@ -108,5 +108,27 @@
         </div>
     </div>
 </section>
+<section>
+    <div>
+        <div>
+            <p>Écrivez un commentaire</p>
+            <form action="">
+                <input type="text">
+                <textarea placeholder="Votre commentaire"></textarea>
+            </form>
+        </div>
+        <div>
+            <div>
+                <div>IMAGE</div>
+                <div>
+                    <p>PSEUDO</p>
+                    <p>LE LOREM Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, possimus?</p>
+                    <p>LE TIME : 6 jours</p>
+                </div>
+            </div>
+        </div>
+        <a href="">Voir plus</a>
+    </div>
+</section>
 </body>
 </html>
