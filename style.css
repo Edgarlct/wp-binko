@@ -43,6 +43,18 @@ Full developer documentation: https://docs.understrap.com
     height: 16px;
 }
 
+.h-24px{
+    height: 24px;
+}
+
+.w-24px{
+    width: 24px;
+}
+
+.w-90{
+    width: 90%;
+}
+
 .rounded{
     border-radius: 7px !important;
 }
@@ -121,6 +133,11 @@ Full developer documentation: https://docs.understrap.com
 .py-6{
     padding-top: 4rem;
     padding-bottom: 4rem;
+}
+
+.px-6{
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
 
 .my-6{

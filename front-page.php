@@ -108,26 +108,36 @@
         </div>
     </div>
 </section>
-<section>
-    <div>
-        <div>
-            <p>Écrivez un commentaire</p>
-            <form action="">
-                <input type="text">
-                <textarea placeholder="Votre commentaire"></textarea>
+<section class="d-flex flex-column justify-content-center bg-primary">
+    <div class="mx-auto mt-6 bg-white rounded d-flex flex-column">
+        <div class="w-75 mx-auto mt-5">
+            <p class="ff-ssp fs-6">Écrivez un commentaire</p>
+            <form action="" class="d-flex flex-column">
+                <input type="text" placeholder="Pseudo" class="w-100 border-primary rounded pl-1 py-2 mb-3">
+                <textarea placeholder="Votre commentaire" class="w-100 border-primary rounded pl-1 py-2 mb-4"></textarea>
+                <input type="submit" value="Publier" class="btn btn-primary text-white px-4 py-2 rounded font-weight-medium mb-5 w-fit">
             </form>
         </div>
-        <div>
-            <div>
-                <div>IMAGE</div>
-                <div>
-                    <p>PSEUDO</p>
-                    <p>LE LOREM Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, possimus?</p>
-                    <p>LE TIME : 6 jours</p>
+        <div class="w-75 mx-auto">
+<!--            commentraire -->
+            <div class="d-flex border-top pt-3">
+                <div class="bg-secondary rounded-circle h-24px w-24px mr-1"></div>
+                <div class="w-90 ff-ssp">
+                    <p class="font-weight-medium mb-2">Jean_michel</p>
+                    <p class="fs-2">LE LOREM Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, possimus?</p>
+                    <p class="fs-2 text-black-50 mb-3">6 jours</p>
+                </div>
+            </div>
+            <div class="d-flex border-top pt-3">
+                <div class="bg-secondary rounded-circle h-24px w-24px mr-1"></div>
+                <div class="w-90 ff-ssp">
+                    <p class="font-weight-medium mb-2">Jean_michel</p>
+                    <p class="fs-2">LE LOREM Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, possimus?</p>
+                    <p class="fs-2 text-black-50 mb-3">6 jours</p>
                 </div>
             </div>
         </div>
-        <a href="">Voir plus</a>
+        <a href="" class="btn btn-primary text-white px-4 py-2 rounded font-weight-medium my-5 w-fit mx-auto">Voir plus</a>
     </div>
 </section>
 </body>
