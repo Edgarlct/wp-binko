@@ -80,7 +80,7 @@ get_header(); ?>
     </div>
 </section>
 <section class="d-flex flex-column justify-content-center bg-primary">
-    <div class="mx-auto mt-6 bg-white rounded d-flex flex-column">
+    <div class="mx-auto mt-6 bg-white rounded d-flex flex-column col-6">
         <div class="w-75 mx-auto mt-5">
             <p class="ff-ssp fs-6">Écrivez un commentaire</p>
             <form action="" class="d-flex flex-column">
@@ -111,17 +111,19 @@ get_header(); ?>
         <a href="" class="btn btn-primary text-white px-4 py-2 rounded font-weight-medium my-5 w-fit mx-auto">Voir plus</a>
     </div>
 </section>
+<section class="d-flex bg-primary">
+    <div class="mx-auto my-6 bg-white rounded col-6 w-75">
+        <p class="ff-ssp fs-6 mt-4">Écrivez un commentaire</p>
+        <?php
+        show_post('faq');
+        function show_post($path) {
+            $post = get_page_by_path($path);
+            $content = apply_filters('the_content', $post->post_content);
+            echo $content;
+        }
+        ?>
+    </div>
+</section>
 
-
-<?php
-function show_post($path) {
-    $post = get_page_by_path($path);
-    $content = apply_filters('the_content', $post->post_content);
-    echo $content;
-    print_r($post);
-}
-
-show_post('faq');
-?>
 <?php
 get_footer();
