@@ -1,47 +1,18 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <?php wp_head(); ?>
-    <title>Document</title>
-</head>
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport"-->
+<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--    --><?php //wp_head(); ?>
+<!--    <title>Document</title>-->
+<!--</head>-->
+<?php
+defined( 'ABSPATH' ) || exit;
+
+get_header(); ?>
 <body>
-<nav class="navbar navbar-expand-md navbar-light bg-primary">
-    <div class="container-xl">
-        <a class="navbar-brand" href="#">
-            <img src="" alt="logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse d-flex justify-content-end ff-roboto mt-2" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item mr-4">
-                    <a href="#" class="nav-link active text-white" aria-current="page">Projet</a>
-                </li>
-                <li class="nav-item mx-4">
-                    <a href="#" class="nav-link text-white">Investissement</a>
-                </li>
-                <li class="nav-item mx-4">
-                    <a href="#" class="nav-link text-white">Actualités</a>
-                </li>
-                <li class="nav-item mx-4">
-                    <a href="#" class="nav-link text-white">Commentaires</a>
-                </li>
-                <li class="nav-item ml-4">
-                    <a href="#" class="btn btn-outline-secondary text-white px-4 py-2 rounded">Partager</a>
-                </li>
-                <li class="nav-item ml-4">
-                    <a href="#" class="nav-link btn btn-secondary text-uppercase text-white px-4 py-2 rounded font-weight-medium">Investir</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
 <header class="bg-primary px-3 py-6">
     <div class="container-xl d-flex justify-content-between align-items-center text-white">
         <div class="col-7 px-0">
@@ -140,5 +111,8 @@
         <a href="" class="btn btn-primary text-white px-4 py-2 rounded font-weight-medium my-5 w-fit mx-auto">Voir plus</a>
     </div>
 </section>
-</body>
-</html>
+
+
+
+<?php
+get_footer();
