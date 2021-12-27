@@ -26,11 +26,36 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
 
-	<!-- ******************* The Navbar Area ******************* -->
-	<header id="wrapper-navbar">
-
-		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
-
-		<?php get_template_part( 'global-templates/navbar', $navbar_type . '-' . $bootstrap_version ); ?>
-
-	</header><!-- #wrapper-navbar end -->
+    <nav class="navbar navbar-expand-md navbar-light bg-primary">
+        <div class="container-xl">
+            <a class="navbar-brand" href="#">
+                <img src="" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-end ff-roboto mt-2" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item mr-4">
+                        <a href="#" class="nav-link active text-white" aria-current="page">Projet</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a href="#" class="nav-link text-white">Investissement</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a href="#" class="nav-link text-white">Actualités</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a href="#" class="nav-link text-white">Commentaires</a>
+                    </li>
+                    <li class="nav-item ml-4">
+                        <a href="#" class="btn btn-outline-secondary text-white px-4 py-2 rounded">Partager</a>
+                    </li>
+                    <li class="nav-item ml-4">
+                        <a href="#" class="nav-link btn btn-secondary text-uppercase text-white px-4 py-2 rounded font-weight-medium">Investir</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
