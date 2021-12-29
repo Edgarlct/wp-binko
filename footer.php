@@ -8,37 +8,45 @@
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-$container = get_theme_mod( 'understrap_container_type' );
+$container = get_theme_mod('understrap_container_type');
 ?>
 
-<?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
+<?php get_template_part('sidebar-templates/sidebar', 'footerfull'); ?>
 
-<div class="wrapper" id="wrapper-footer">
+<div class="wrapper bg-primary" id="wrapper-footer">
+    <footer class="site-footer" id="colophon">
 
-	<div class="<?php echo esc_attr( $container ); ?>">
+        <div class="site-info container-xl d-flex justify-content-between row text-white ff-ssp mx-auto">
+            <div class="bg-secondary">
+                <p>logo</p>
+            </div>
+            <div>
+                <p class="font-weight-light">Pour nous suivre </p>
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'reseaux-footer',
+                        'menu_id' => 'primary-menu',
+                    )
+                );
+                ?>
+            </div>
+            <div>
+                <p class="font-weight-light">Pages</p>
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'menu-footer',
+                        'menu_id' => 'primary-menu',
+                    )
+                );
+                ?>
+            </div>
+        </div><!-- .site-info -->
 
-		<div class="row">
-
-			<div class="col-md-12">
-
-				<footer class="site-footer" id="colophon">
-
-					<div class="site-info">
-
-						<?php understrap_site_info(); ?>
-
-					</div><!-- .site-info -->
-
-				</footer><!-- #colophon -->
-
-			</div><!--col end -->
-
-		</div><!-- row end -->
-
-	</div><!-- container end -->
-
+    </footer><!-- #colophon -->
 </div><!-- wrapper end -->
 
 </div><!-- #page we need this extra closing tag here -->
