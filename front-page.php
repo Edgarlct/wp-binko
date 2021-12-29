@@ -54,7 +54,7 @@ get_header(); ?>
         </div>
     </div>
 </header>
-<section class="d-flex flex-column justify-content-center w-fit mx-auto">
+<section class="d-flex flex-column justify-content-center w-fit mx-auto" id="investissement">
     <div class="d-flex justify-content-center flex-column align-items-center mt-6">
         <p class="fs-7 font-weight-bold">Multipliez par <span class="color-secondary fs-10">3</span> votre investissement initial</p>
         <p class="ff-ssp fs-6">Simulez votre investissement</p>
@@ -79,7 +79,7 @@ get_header(); ?>
         </div>
     </div>
 </section>
-<section class="d-flex flex-column justify-content-center bg-primary">
+<section class="d-flex flex-column justify-content-center bg-primary" id="commentaire">
     <div class="mx-auto mt-6 bg-white rounded d-flex flex-column col-6">
         <div class="w-75 mx-auto mt-5">
             <p class="ff-ssp fs-6">Écrivez un commentaire</p>
@@ -111,7 +111,7 @@ get_header(); ?>
         <a href="" class="btn btn-primary text-white px-4 py-2 rounded font-weight-medium my-5 w-fit mx-auto">Voir plus</a>
     </div>
 </section>
-<section class="d-flex bg-primary">
+<section class="d-flex bg-primary" id="faq">
     <div class="mx-auto my-6 bg-white rounded col-6 w-75">
         <p class="ff-ssp fs-6 mt-4">Écrivez un commentaire</p>
         <?php
