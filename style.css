@@ -225,3 +225,27 @@ p{
 .sp-ea-one{
     margin-bottom: 1.5rem;
 }
+
+.site-info ul {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    padding-left: 0;
+    gap: 3rem;
+}
+
+.site-info ul a{
+    color: white;
+}
+
+.menu-reseaux-container ul{
+    gap: 1rem;
+}
+
+.menu > ul > .page_item{
+    font-size: 14px;
+    text-decoration: underline;
+}
+
