@@ -61,10 +61,10 @@ get_header(); ?>
         <from class="w-75">
             <label for="amount" class="ff-roboto">Montant investit :</label>
             <div class="d-flex position-relative mb-3">
-                <input class="w-100 border-primary rounded pl-1 py-2" type="text" name="amount" placeholder="0">
+                <input id="amount" class="w-100 border-primary rounded pl-1 py-2" type="text" name="amount" placeholder="0" oninput="calculInvest()">
                 <span class="position-absolute p-right mt-2">€</span>
             </div>
-            <input class="w-100 btn btn-primary" type="submit" value="CALCULER">
+            <input class="w-100 btn btn-primary" type="submit" value="CALCULER" onsubmit="calculInvest()">
         </from>
         <div class="w-75 mt-3">
             <a href="#" class="btn btn-outline-primary w-100">CONTRAT INVESTISSEUR (PDF)</a>
@@ -74,9 +74,7 @@ get_header(); ?>
         <p>Je recevrais tous les trimestres :</p>
         <p><span class="fs-5 color-secondary font-weight-bold">0%</span> du chiffre d’affaires pendant 5 ans </p>
         <p>Total sur 5 ans de : <span class="fs-5 color-secondary font-weight-bold">0€</span></p>
-        <div class="graph bg-secondary">
-            <p>Graph</p>
-        </div>
+        <canvas id="myChart" width="400" height="200"></canvas>
     </div>
 </section>
 <section class="d-flex flex-column justify-content-center bg-primary" id="commentaire">
