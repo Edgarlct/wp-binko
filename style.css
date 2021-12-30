@@ -271,6 +271,11 @@ p{
     border-color: #2EA1A8;
 }
 
+footer .navbar-brand{
+    display: flex;
+    align-items: center;
+}
+
 /*-----------*/
 /*Temporaire*/
 /*cacher admin bar*/
