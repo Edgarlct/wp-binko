@@ -245,3 +245,37 @@ p{
     gap: 1rem;
 }
 
+.menu-nav-menu-container > ul{
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+    margin-bottom: 0;
+}
+
+.menu-nav-menu-container > ul a{
+    color: white;
+}
+
+.menu-nav-menu-container > ul > li:last-of-type > a{
+    background-color: #3FC2CA;
+    border-color: #3FC2CA;
+    border-radius: 7px;
+    text-transform: uppercase;
+    padding: .5rem 1.5rem;
+    transition: .15s ease-in;
+    text-decoration: none;
+}
+
+.menu-nav-menu-container > ul > li:last-of-type > a:hover{
+    background-color: #2EA1A8;
+    border-color: #2EA1A8;
+}
+
+/*-----------*/
+/*Temporaire*/
+/*cacher admin bar*/
+/*---------*/
+.nojq{
+    visibility: hidden !important;
+}
+
