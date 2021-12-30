@@ -19,9 +19,7 @@ $container = get_theme_mod('understrap_container_type');
     <footer class="site-footer" id="colophon">
 
         <div class="site-info container-xl d-flex justify-content-between row text-white ff-ssp mx-auto">
-            <div class="bg-secondary">
-                <p>logo</p>
-            </div>
+            <?php the_custom_logo(); ?>
             <div>
                 <p class="font-weight-light">Pour nous suivre </p>
                 <?php
