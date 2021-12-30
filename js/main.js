@@ -8,7 +8,7 @@ let val3 = 0;
 let val4 = 0;
 let val5 = 0;
 
-const reg = new RegExp('^[0-9]*\.?[0-9]{0,2}$');
+const reg = new RegExp('^[0-9]*\[.]?[0-9]{0,2}$');
 // display chart
 const myChart = new Chart(canva, {
     type: 'line',
@@ -55,6 +55,6 @@ function calculInvest() {
         // update chart
         myChart.update()
 
-        totalAmount.innerHTML = val5 + "€";
+        totalAmount.innerHTML = val5.toFixed(2) + "€";
     }
 }
