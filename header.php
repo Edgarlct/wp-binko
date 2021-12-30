@@ -26,36 +26,42 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
 
-    <nav class="navbar navbar-expand-md navbar-light bg-primary">
+    <nav class="navbar navbar-expand-md navbar-light bg-primary fixed-top">
         <div class="container-xl">
-            <a class="navbar-brand" href="#">
-                <img src="" alt="logo">
-            </a>
+            <?php
+            the_custom_logo();
+            wp_nav_menu(
+                array(
+                    'theme_location' => 'nav-menu',
+                    'menu_id' => 'primary-menu',
+                )
+            );
+            ?>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-flex justify-content-end ff-roboto mt-2" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item mr-4">
-                        <a href="#" class="nav-link active text-white" aria-current="page">Projet</a>
-                    </li>
-                    <li class="nav-item mx-4">
-                        <a href="#" class="nav-link text-white">Investissement</a>
-                    </li>
-                    <li class="nav-item mx-4">
-                        <a href="#" class="nav-link text-white">Actualités</a>
-                    </li>
-                    <li class="nav-item mx-4">
-                        <a href="#" class="nav-link text-white">Commentaires</a>
-                    </li>
-                    <li class="nav-item ml-4">
-                        <a href="#" class="btn btn-outline-secondary text-white px-4 py-2 rounded">Partager</a>
-                    </li>
-                    <li class="nav-item ml-4">
-                        <a href="#" class="nav-link btn btn-secondary text-uppercase text-white px-4 py-2 rounded font-weight-medium">Investir</a>
-                    </li>
-                </ul>
-            </div>
+<!--            <div class="collapse navbar-collapse d-flex justify-content-end ff-roboto mt-2" id="navbarNav">-->
+<!--                <ul class="navbar-nav">-->
+<!--                    <li class="nav-item mr-4">-->
+<!--                        <a href="#" class="nav-link active text-white" aria-current="page">Projet</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item mx-4">-->
+<!--                        <a href="#" class="nav-link text-white">Investissement</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item mx-4">-->
+<!--                        <a href="#" class="nav-link text-white">Actualités</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item mx-4">-->
+<!--                        <a href="#" class="nav-link text-white">Commentaires</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item ml-4">-->
+<!--                        <a href="#" class="btn btn-outline-secondary text-white px-4 py-2 rounded">Partager</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item ml-4">-->
+<!--                        <a href="#" class="nav-link btn btn-secondary text-uppercase text-white px-4 py-2 rounded font-weight-medium">Investir</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
         </div>
     </nav>
