@@ -1,6 +1,8 @@
 // get canva for display chart
 const canva = document.getElementById('myChart').getContext('2d');
 const totalAmount = document.getElementById('totalAmount');
+const errorMsg = document.getElementById('errorMessage');
+
 //set default valut on chart
 let val1 = 0;
 let val2 = 0;
@@ -36,7 +38,11 @@ const myChart = new Chart(canva, {
 function calculInvest() {
     // get value in input
     const input = document.getElementById('amount').value;
-    if(reg.test(input)) {
+    const compareReg = reg.test(input);
+
+    //display error message
+    errorMsg.classList.toggle('active', compareReg === false);
+    if(compareReg) {
 
         const multiplierA1 = 0.0603;
         const multiplierA2 = 0.2745;

@@ -280,6 +280,14 @@ footer .navbar-brand{
     align-items: center;
 }
 
+.hiden{
+    display: none;
+}
+
+.active{
+    display: block;
+}
+
 /*-----------*/
 /*Temporaire*/
 /*cacher admin bar*/

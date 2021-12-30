@@ -64,6 +64,7 @@ get_header(); ?>
                 <input id="amount" class="w-100 border-primary rounded pl-1 py-2" type="text" name="amount" placeholder="0" oninput="calculInvest()">
                 <span class="position-absolute p-right mt-2">€</span>
             </div>
+            <span id="errorMessage" class="hiden mb-1 text-danger">Veuillez entrez un chiffre valable</span>
         </from>
         <div class="w-75">
             <a href="#" class="btn btn-outline-primary w-100">CONTRAT INVESTISSEUR (PDF)</a>
