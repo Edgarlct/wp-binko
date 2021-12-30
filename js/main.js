@@ -1,6 +1,6 @@
 // get canva for display chart
 const canva = document.getElementById('myChart').getContext('2d');
-
+const totalAmount = document.getElementById('totalAmount');
 //set default valut on chart
 let val1 = 0;
 let val2 = 0;
@@ -54,5 +54,7 @@ function calculInvest() {
         myChart.data.datasets[0].data = [0, val1, val2, val3, val4, val5]
         // update chart
         myChart.update()
+
+        totalAmount.innerHTML = val5 + "€";
     }
 }

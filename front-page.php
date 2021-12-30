@@ -73,7 +73,7 @@ get_header(); ?>
     <div class="ff-ssp w-75 mx-auto my-6">
         <p>Je recevrais tous les trimestres :</p>
         <p><span class="fs-5 color-secondary font-weight-bold">0%</span> du chiffre d’affaires pendant 5 ans </p>
-        <p>Total sur 5 ans de : <span class="fs-5 color-secondary font-weight-bold">0€</span></p>
+        <p>Total sur 5 ans de : <span id="totalAmount" class="fs-5 color-secondary font-weight-bold">0€</span></p>
         <canvas id="myChart" width="400" height="200"></canvas>
     </div>
 </section>
