@@ -54,7 +54,7 @@ get_header(); ?>
         </div>
     </div>
 </header>
-<section class="d-flex flex-column justify-content-center w-fit mx-auto" id="investissement">
+<section class="container-fluid d-flex flex-column justify-content-center w-fit mx-auto" id="investissement">
     <div class="d-flex justify-content-center flex-column align-items-center mt-6">
         <p class="fs-7 font-weight-bold">Multipliez par <span class="color-secondary fs-10">3</span> votre investissement initial</p>
         <p class="ff-ssp fs-6">Simulez votre investissement</p>
@@ -77,8 +77,8 @@ get_header(); ?>
         <canvas id="myChart" width="400" height="200"></canvas>
     </div>
 </section>
-<section class="d-flex flex-column justify-content-center bg-primary" id="commentaire">
-    <div class="mx-auto mt-6 bg-white rounded d-flex flex-column col-6">
+<section class="container-fluid d-flex flex-column justify-content-center bg-primary" id="commentaire">
+    <div class="mt-6 bg-white rounded d-flex flex-column col-sm-6 mx-sm-auto">
         <div class="w-75 mx-auto mt-5">
             <p class="ff-ssp fs-6">Écrivez un commentaire</p>
             <form action="" class="d-flex flex-column">
@@ -88,7 +88,7 @@ get_header(); ?>
             </form>
         </div>
         <div class="w-75 mx-auto">
-<!--            commentraire -->
+        <!-- commentraire -->
             <div class="d-flex border-top pt-3">
                 <div class="bg-secondary rounded-circle h-24px w-24px mr-1"></div>
                 <div class="w-90 ff-ssp">
@@ -109,8 +109,8 @@ get_header(); ?>
         <a href="" class="btn btn-primary text-white px-4 py-2 rounded font-weight-medium my-5 w-fit mx-auto">Voir plus</a>
     </div>
 </section>
-<section class="d-flex bg-primary" id="faq">
-    <div class="mx-auto my-6 bg-white rounded col-6 w-75">
+<section class="d-flex container-fluid bg-primary" id="faq">
+    <div class="my-6 bg-white rounded col-sm-6 mx-sm-auto">
         <p class="ff-ssp fs-6 mt-4">Écrivez un commentaire</p>
         <?php
         show_post('faq');
