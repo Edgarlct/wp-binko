@@ -9,9 +9,25 @@
 <!--    <title>Document</title>-->
 <!--</head>-->
 <?php
+$pseudo = $_POST['pseudo'];
+$comment = $_POST['comment'];
+
+if (strlen($pseudo) > 2 and strlen($comment) > 2) {
+    $data = array(
+        'comment_author' => $pseudo,
+        'comment_content' => $comment
+    );
+
+    wp_insert_comment($data);
+    wp_redirect('http://localhost/wordpress/');
+    exit;
+}
+
 defined( 'ABSPATH' ) || exit;
 
-get_header(); ?>
+get_header();
+
+?>
 <body>
 <header class="bg-primary px-3 py-6">
     <div class="container-xl d-flex justify-content-between align-items-center text-white">
@@ -81,11 +97,13 @@ get_header(); ?>
     <div class="mt-6 bg-white rounded d-flex flex-column col-sm-6 mx-sm-auto">
         <div class="w-75 mx-auto mt-5">
             <p class="ff-ssp fs-6">Écrivez un commentaire</p>
-            <form action="" class="d-flex flex-column">
-                <input type="text" placeholder="Pseudo" class="w-100 border-primary rounded pl-1 py-2 mb-3">
-                <textarea placeholder="Votre commentaire" class="w-100 border-primary rounded pl-1 py-2 mb-4"></textarea>
+            <form action="" method="POST" class="d-flex flex-column">
+                <input type="text" name="pseudo" placeholder="Pseudo" class="w-100 border-primary rounded pl-1 py-2 mb-3">
+                <textarea name="comment" placeholder="Votre commentaire" class="w-100 border-primary rounded pl-1 py-2 mb-4"></textarea>
                 <input type="submit" value="Publier" class="btn btn-primary text-white px-4 py-2 rounded font-weight-medium mb-5 w-fit">
             </form>
+
+
         </div>
         <div class="w-75 mx-auto">
         <!-- commentraire -->
