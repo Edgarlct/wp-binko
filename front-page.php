@@ -9,11 +9,12 @@
 <!--    <title>Document</title>-->
 <!--</head>-->
 <?php
-$pseudo = $_POST['pseudo'];
-$comment = $_POST['comment'];
+$pseudo = htmlspecialchars($_POST['pseudo']);
+$comment = htmlspecialchars($_POST['comment']);
 
-if (strlen($pseudo) > 2 and strlen($comment) > 2) {
+if (strlen($pseudo) > 1 and strlen($comment) > 1) {
     $data = array(
+        'comment_post_ID' => 1,
         'comment_author' => $pseudo,
         'comment_content' => $comment
     );
@@ -107,22 +108,57 @@ get_header();
         </div>
         <div class="w-75 mx-auto">
         <!-- commentraire -->
-            <div class="d-flex border-top pt-3">
-                <div class="bg-secondary rounded-circle h-24px w-24px mr-1"></div>
-                <div class="w-90 ff-ssp">
-                    <p class="font-weight-medium mb-2">Jean_michel</p>
-                    <p class="fs-2">LE LOREM Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, possimus?</p>
-                    <p class="fs-2 text-black-50 mb-3">6 jours</p>
+
+            <?php
+            $args = array(
+                'parent' => 0
+            );
+            $com = get_comments($args);
+            $date = date_create();
+            foreach ( $com as $comment ) :
+                $comDate = $comment->comment_date;
+                $comDate = date_create($comDate);
+                $comDate = date_diff($comDate, $date);
+                $id = $comment->comment_ID;
+                $argsChild = array(
+                        'parent' => $id
+                );
+                $replys = get_comments($argsChild);
+                if (count($replys) > 0){
+                    foreach ( $replys as $reply ) :
+
+                        $replyDate = $comment->comment_date;
+                        $replyDate = date_create($replyDate);
+                        $replyDate = date_diff($replyDate, $date);
+
+                    endforeach;
+                }
+
+            ?>
+
+                <div class="d-flex flex-column border-top pt-3">
+                    <div class="d-flex">
+                        <div class="bg-secondary rounded-circle h-24px w-24px mr-1"></div>
+                        <div class="w-90 ff-ssp">
+                            <p class="font-weight-medium mb-2"><?= $comment->comment_author ?></p>
+                            <p class="fs-2"><?= $comment->comment_content ?></p>
+                            <p class="fs-2 text-black-50 mb-3"><?= $comDate->format('%d') ?> jours</p>
+                        </div>
+                    </div>
+                    <?php if (count($replys) > 0){ ?>
+                    <div class="ml-5 d-flex">
+                        <div class="bg-secondary rounded-circle h-24px w-24px mr-1"></div>
+                        <div class="w-90 ff-ssp">
+                            <p class="font-weight-medium mb-2"><?= $reply->comment_author ?></p>
+                            <p class="fs-2"><?= $reply->comment_content ?></p>
+                            <p class="fs-2 text-black-50 mb-3"><?= $replyDate->format('%d') ?> jours</p>
+                        </div>
+                    </div>
+                    <?php } ?>
                 </div>
-            </div>
-            <div class="d-flex border-top pt-3">
-                <div class="bg-secondary rounded-circle h-24px w-24px mr-1"></div>
-                <div class="w-90 ff-ssp">
-                    <p class="font-weight-medium mb-2">Jean_michel</p>
-                    <p class="fs-2">LE LOREM Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, possimus?</p>
-                    <p class="fs-2 text-black-50 mb-3">6 jours</p>
-                </div>
-            </div>
+            <?php
+            endforeach;
+            ?>
         </div>
         <a href="" class="btn btn-primary text-white px-4 py-2 rounded font-weight-medium my-5 w-fit mx-auto">Voir plus</a>
     </div>
@@ -140,6 +176,11 @@ get_header();
         ?>
     </div>
 </section>
+<div>
+   <?php
+        show_post('stripe');
+   ?>
+</div>
 
 <?php
 get_footer();
