@@ -26,8 +26,8 @@ $container = get_theme_mod('understrap_container_type');
             <div class="row">
 
                 <main class="site-main" id="main">
-                    <section class="mt-5 container-fluid bg-white rounded mx-auto px-5">
-                        <h2 class="text-center fs-10 pt-3">Présentation</h2>
+                    <section class="mt-5 container-fluid bg-white rounded mx-auto px-5 py-3">
+                        <h2 class="text-center fs-10">Présentation</h2>
                         <section class="bg-gradient-secondary rounded overflow-hidden">
                             <h2 class="text-center col-7 mx-auto font-weight-bold py-6 text-white fs-8">La poubelle qui reconnaît, broie et trie les déchets automatiquement</h2>
                             <div class="d-flex align-items-center justify-content-around mb-8">
@@ -129,93 +129,93 @@ $container = get_theme_mod('understrap_container_type');
                             <p class="w-75 fs-5 font-weight-medium text-center text-white mx-auto mt-4 pb-5">Globalement, ça ne change presque rien pour toi, il te suffit juste de scanner et de
                                 sortir trois fois moins tes poubelles...</p>
                         </section>
-                        <section>
-                            <h2>Ce que ça change réellement</h2>
-                            <img src="https://localhost/wordpress/wp-content/uploads/2022/01/uykuyki-1.png" alt="">
-                            <div>
-                                <div>
-                                    <h4>Poubelle classique</h4>
-                                    <div>
+                        <section class="bg-gradient-primary rounded mt-5">
+                            <h2 class="text-center col-7 mx-auto font-weight-bold py-6 text-white fs-8">Ce que ça change réellement</h2>
+                            <img src="https://localhost/wordpress/wp-content/uploads/2022/01/uykuyki-1.png" alt="" class="mx-auto d-block mb-6">
+                            <div class="d-flex flex-row justify-content-between col-11 mx-auto pb-4">
+                                <div class="text-white col-5">
+                                    <h4 class="fs-5 font-weight-medium mb-5">Poubelle classique</h4>
+                                    <div class="d-flex align-items-center mb-4">
                                         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-120.png"
-                                             alt="">
-                                        <p>recycle 26% des déchets</p>
+                                             alt="" class="mr-3">
+                                        <p class="mb-0 fs-4 font-weight-light">recycle 26% des déchets</p>
                                     </div>
-                                    <div>
+                                    <div class="d-flex align-items-center mb-4">
                                         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-120.png"
-                                             alt="">
-                                        <p>revalorise 1 / 10 des emballages plastique</p>
+                                             alt="" class="mr-3">
+                                        <p class="mb-0 fs-4 font-weight-light">revalorise 1 / 10 des emballages plastique</p>
                                     </div>
-                                    <div>
+                                    <div class="d-flex align-items-center mb-4">
                                         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-120.png"
-                                             alt="">
-                                        <p>coûte 766 millions d’euros mensuel</p>
+                                             alt="" class="mr-3">
+                                        <p class="mb-0 fs-4 font-weight-light">coûte 766 millions d’euros mensuel</p>
                                     </div>
-                                    <div>
+                                    <div class="d-flex align-items-center mb-4">
                                         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-120.png"
-                                             alt="">
-                                        <p>represent 5 % des émissions de CO2</p>
+                                             alt="" class="mr-3">
+                                        <p class="mb-0 fs-4 font-weight-light">represent 5 % des émissions de CO2</p>
                                     </div>
-                                    <div>
+                                    <div class="d-flex align-items-center mb-4">
                                         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-120.png"
-                                             alt="">
-                                        <p>des sacs-poubelles fragiles et odorants</p>
+                                             alt="" class="mr-3">
+                                        <p class="mb-0 fs-4 font-weight-light">des sacs-poubelles fragiles et odorants</p>
                                     </div>
-                                    <div>
+                                    <div class="d-flex align-items-center mb-4">
                                         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-120.png"
-                                             alt="">
-                                        <p>à sortir deux fois par semaines</p>
+                                             alt="" class="mr-3">
+                                        <p class="mb-0 fs-4 font-weight-light">à sortir deux fois par semaines</p>
                                     </div>
-                                    <div>
+                                    <div class="d-flex align-items-center mb-4">
                                         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-103.png"
-                                             alt="">
-                                        <p>financée par nos impôts : la TEOM</p>
+                                             alt="" class="mr-3">
+                                        <p class="mb-0 fs-4 font-weight-ligh font-weight-lightt">financée par nos impôts : la TEOM</p>
                                     </div>
                                 </div>
-                                <div>
-                                    <h4>Poubelle classique</h4>
-                                    <div>
+                                <div class="text-white col-5">
+                                    <h4 class="fs-5 font-weight-medium mb-5">La solution Binko</h4>
+                                    <div class="d-flex align-items-center flex-row-reverse mb-4">
                                         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-96.png"
-                                             alt="">
-                                        <p>recycle 71% des déchets</p>
+                                             alt="" class="ml-3">
+                                        <p class="mb-0 fs-4 font-weight-light text-right">recycle 71% des déchets</p>
                                     </div>
-                                    <div>
+                                    <div class="d-flex align-items-center flex-row-reverse mb-4">
                                         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-96.png"
-                                             alt="">
-                                        <p>emballages plastiques : revalorisés à 89%</p>
+                                             alt="" class="ml-3">
+                                        <p class="mb-0 fs-4 font-weight-light text-right">emballages plastiques : revalorisés à 89%</p>
                                     </div>
-                                    <div>
+                                    <div class="d-flex align-items-center flex-row-reverse mb-4">
                                         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-96.png"
-                                             alt="">
-                                        <p>divise par 6 le coût du recyclage du déchet</p>
+                                             alt="" class="ml-3">
+                                        <p class="mb-0 fs-4 font-weight-light text-right">divise par 6 le coût du recyclage du déchet</p>
                                     </div>
-                                    <div>
+                                    <div class="d-flex align-items-center flex-row-reverse mb-4">
                                         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-96.png"
-                                             alt="">
-                                        <p>représente 40% d’émissions en moins</p>
+                                             alt="" class="ml-3">
+                                        <p class="mb-0 fs-4 font-weight-light text-right">représente 40% d’émissions en moins</p>
                                     </div>
-                                    <div>
+                                    <div class="d-flex align-items-center flex-row-reverse mb-4">
                                         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-96.png"
-                                             alt="">
-                                        <p>des bacs hermétiques, inodores et solide</p>
+                                             alt="" class="ml-3">
+                                        <p class="mb-0 fs-4 font-weight-light text-right">des bacs hermétiques, inodores et solide</p>
                                     </div>
-                                    <div>
+                                    <div class="d-flex align-items-center flex-row-reverse mb-4">
+                                        <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-96.png"
+                                             alt="" class="ml-3">
+                                        <p class="mb-0 fs-4 font-weight-light text-right">à sortir une à deux fois par mois</p>
+                                    </div>
+                                    <div class="d-flex align-items-center flex-row-reverse mb-4">
                                         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-103.png"
-                                             alt="">
-                                        <p>financée par nos impôts : la TEOM</p>
-                                    </div>
-                                    <div>
-                                        <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-103.png"
-                                             alt="">
-                                        <p>à sortir une à deux fois par mois</p>
+                                             alt="" class="ml-3">
+                                        <p class="mb-0 fs-4 font-weight-light text-right">financée par nos impôts : la TEOM</p>
                                     </div>
                                 </div>
                             </div>
                         </section>
                         <section>
-                            <h2>Et cette caméra, comment elle peut détécter tout ça ?</h2>
-                            <div>
-                                <div>
-                                    <p>Notre technologies est basée sur une intelligence artificielle de reconnaissance
+                            <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center py-6">Et cette caméra, comment elle peut détécter tout ça ?</h2>
+                            <div class="d-flex align-items-center justify-content-around mb-5">
+                                <div class="col-6 fs-5">
+                                    <p class="mb-4">Notre technologies est basée sur une intelligence artificielle de reconnaissance
                                         de forme, de texte, de code barre et de QR code, que nous avons développée avec
                                         notre <strong>partenaire Google France</strong></p>
                                     <p>Nous avons constitué une base de données de <strong>819 120</strong> produits
@@ -224,13 +224,13 @@ $container = get_theme_mod('understrap_container_type');
                                 <img src="https://localhost/wordpress/wp-content/uploads/2022/01/image-2.png" alt="">
                             </div>
                         </section>
-                        <section>
-                            <h2>Et combien ça va coûter ?</h2>
-                            <div>
+                        <section class="rounded bg-gradient-mixed-primary-secondary mb-5">
+                            <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center py-6 text-white">Et combien ça va coûter ?</h2>
+                            <div class="d-flex col-11 align-items-center justify-content-around pb-5 mx-auto">
                                 <img src="https://localhost/wordpress/wp-content/uploads/2022/01/4-copie-2-1-1.png"
                                      alt="">
-                                <div>
-                                    <p>Bah rien en fait...</p>
+                                <div class="text-white col-6 fs-5">
+                                    <p class="mb-4">Bah rien en fait...</p>
                                     <p>Nos clients sont les communes. Elles achètent nos Binkos et les installent
                                         gratuitement, réduisant ainsi le nombre de camions poubelles et le besoin en
                                         centre de tri. Cerise sur le gâteau, la solution est entièrement fiancée avec la
@@ -275,9 +275,9 @@ $container = get_theme_mod('understrap_container_type');
                                 </div>
                             </div>
                         </section>
-                        <section>
-                            <h2>Ils nous soutiennent déjà</h2>
-                            <img src="https://localhost/wordpress/wp-content/uploads/2022/01/cfzefzerfzef-1.png" alt="">
+                        <section class="bg-gradient-primary mb-5 rounded">
+                            <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center pt-4 pb-2 text-white">Ils nous soutiennent déjà</h2>
+                            <img src="https://localhost/wordpress/wp-content/uploads/2022/01/cfzefzerfzef-1.png" alt="" class="d-block mx-auto">
                         </section>
                     </section>
                 </main><!-- #main -->
