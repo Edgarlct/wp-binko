@@ -238,40 +238,41 @@ $container = get_theme_mod('understrap_container_type');
                                 </div>
                             </div>
                         </section>
-                        <section>
-                            <h2>Et ensuite ?</h2>
-                            <div>
-                                <div>
-                                    <p>Novembre 2021</p>
-                                    <div>
+                        <section class="rounded bg-gradient-primary mb-5">
+                            <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center py-6 text-white">Et ensuite ?</h2>
+                            <div class="d-flex flex-column align-content-between col-11 mx-auto pb-5">
+                                <span class="bg-line"></span>
+                                <div class="fs-5 text-white font-weight-light d-flex justify-content-center align-items-center mb-5">
+                                    <p class="col-4 text-center">Novembre 2021</p>
+                                    <div class="circle-icon">
                                         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/piggy-bank-1-1.png"
-                                             alt="">
+                                             alt="" class="mx-auto d-block">
                                     </div>
-                                    <p>Crowdfounding</p>
+                                    <p class="col-4 text-center">Crowdfounding</p>
                                 </div>
-                                <div>
-                                    <p>janvier 2022</p>
-                                    <div>
+                                <div class="fs-5 text-white font-weight-light d-flex justify-content-center align-items-center mb-5">
+                                    <p class="col-4 text-center">janvier 2022</p>
+                                    <div class="circle-icon">
                                         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/production-1.png"
-                                             alt="">
+                                             alt="" class="mx-auto d-block">
                                     </div>
-                                    <p>Pré-industrilsation Bureau d’étude</p>
+                                    <p class="col-4 text-center">Pré-industrilsation Bureau d’étude</p>
                                 </div>
-                                <div>
-                                    <p>Mai 2022</p>
-                                    <div>
+                                <div class="fs-5 text-white font-weight-light d-flex justify-content-center align-items-center mb-5">
+                                    <p class="col-4 text-center">Mai 2022</p>
+                                    <div class="circle-icon">
                                         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/search-1.png"
-                                             alt="">
+                                             alt="" class="mx-auto d-block">
                                     </div>
-                                    <p>Phase de test (6 mois) Yvelines</p>
+                                    <p class="col-4 text-center">Phase de test (6 mois) Yvelines</p>
                                 </div>
-                                <div>
-                                    <p>Octobre 2022</p>
-                                    <div>
+                                <div class="fs-5 text-white font-weight-light d-flex justify-content-center align-items-center">
+                                    <p class="col-4 text-center">Octobre 2022</p>
+                                    <div class="circle-icon">
                                         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/flag-1.png"
-                                             alt="">
+                                             alt="" class="mx-auto d-block">
                                     </div>
-                                    <p>Première commune cliente</p>
+                                    <p class="col-4 text-center">Première commune cliente</p>
                                 </div>
                             </div>
                         </section>
