@@ -69,65 +69,64 @@ $container = get_theme_mod('understrap_container_type');
                                 revalorisés</p>
                         </section>
                         <section>
-                            <h2>Et ça change quoi ?</h2>
+                            <h2 class="text-center col-7 mx-auto font-weight-bold pt-5 pb-3 fs-8">Et ça change quoi ?</h2>
                             <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Diapo-French-Tech-1.gif"
-                                 alt="">
-                            <p>Binko réduit jusqu’à 12 fois la taille des déchets, dis stop aux erreurs de tri. Binko
-                                Divise tes coûts de recyclage par 6 !</p>
+                                 alt="" class="rounded w-75 d-block mx-auto">
+                            <p class="w-75 fs-5 mx-auto text-center mt-3">Binko réduit jusqu’à 12 fois la taille des déchets, dis stop aux erreurs de tri. <strong>Binko
+                                    Divise tes coûts de recyclage par 6 !</strong></p>
                         </section>
-                        <section>
-                            <h2>Concrètement, comment ça fonctionne ?</h2>
-                            <p>Prenons l’exemple de Mathilde, qui souhaite jeter son paquet de gateau préfère</p>
-                            <div>
+                        <section class="bg-gradient-primary rounded mt-5">
+                            <h2 class="text-center col-7 mx-auto font-weight-bold py-6 text-white fs-8">Concrètement, comment ça fonctionne ?</h2>
+                            <p class="text-center col-7 mx-auto font-weight-medium text-white fs-5">Prenons l’exemple de Mathilde, qui souhaite jeter son paquet de gateau préfère</p>
+                            <div class="d-flex flex-row col-11 mx-auto justify-content-center">
                                 <img src="https://localhost/wordpress/wp-content/uploads/2022/01/C3-sans-fond-1.png"
-                                     alt="">
-                                <div>
-                                    <div>
-                                        <div>
-                                            <p>1</p>
+                                     alt="" class="mx-auto">
+                                <div class="col-7 d-flex flex-column justify-content-evenly">
+                                    <div class="d-flex align-items-center text-white">
+                                        <div class="circle mr-3">
+                                            <p class="fs-8 font-weight-bold mb-0">1</p>
                                         </div>
-                                        <p>La caméra reconnaît l’emballage</p>
+                                        <p class="fs-4 mb-0 font-weight-medium">La caméra reconnaît l’emballage</p>
                                     </div>
-                                    <div>
-                                        <div>
-                                            <p>2</p>
+                                    <div class="d-flex align-items-center text-white">
+                                        <div class="circle mr-3">
+                                            <p class="fs-8 font-weight-bold mb-0">2</p>
                                         </div>
-                                        <p>Binko catégorise le produit
-                                        </p>
+                                        <p class="fs-4 mb-0 font-weight-medium">Binko catégorise le produit</p>
                                     </div>
-                                    <div>
-                                        <div>
-                                            <p>3</p>
+                                    <div class="d-flex align-items-center text-white">
+                                        <div class="circle mr-3">
+                                            <p class="fs-8 font-weight-bold mb-0">3</p>
                                         </div>
-                                        <p>Le paquet de gâteau est broyé</p>
+                                        <p class="fs-4 mb-0 font-weight-medium">Le paquet de gâteau est broyé</p>
                                     </div>
-                                    <div>
-                                        <div>
-                                            <p>4</p>
+                                    <div class="d-flex align-items-center text-white">
+                                        <div class="circle mr-3">
+                                            <p class="fs-8 font-weight-bold mb-0">4</p>
                                         </div>
-                                        <p>Le carton est trié vers le bon bac</p>
+                                        <p class="fs-4 mb-0 font-weight-medium">Le carton est trié vers le bon bac</p>
                                     </div>
-                                    <div>
-                                        <div>
-                                            <p>5</p>
+                                    <div class="d-flex align-items-center text-white">
+                                        <div class="circle mr-3">
+                                            <p class="fs-8 font-weight-bold mb-0">5</p>
                                         </div>
-                                        <p>Nous collections le bac quand il est plein</p>
+                                        <p class="fs-4 mb-0 font-weight-medium">Nous collections le bac quand il est plein</p>
                                     </div>
-                                    <div>
-                                        <div>
-                                            <p>6</p>
+                                    <div class="d-flex align-items-center text-white">
+                                        <div class="circle mr-3">
+                                            <p class="fs-8 font-weight-bold mb-0">6</p>
                                         </div>
-                                        <p>Il est envoyé au centre de recyclage</p>
+                                        <p class="fs-4 mb-0 font-weight-medium">Il est envoyé au centre de recyclage</p>
                                     </div>
-                                    <div>
-                                        <div>
-                                            <p>7</p>
+                                    <div class="d-flex align-items-center text-white">
+                                        <div class="circle mr-3">
+                                            <p class="fs-8 font-weight-bold mb-0">7</p>
                                         </div>
-                                        <p>Le paquet de gâteau est revalorisé</p>
+                                        <p class="fs-4 mb-0 font-weight-medium">Le paquet de gâteau est revalorisé</p>
                                     </div>
                                 </div>
                             </div>
-                            <p>Globalement, ça ne change presque rien pour toi, il te suffit juste de scanner et de
+                            <p class="w-75 fs-5 font-weight-medium text-center text-white mx-auto mt-4 pb-5">Globalement, ça ne change presque rien pour toi, il te suffit juste de scanner et de
                                 sortir trois fois moins tes poubelles...</p>
                         </section>
                         <section>
