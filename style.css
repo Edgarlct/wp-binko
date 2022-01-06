@@ -140,13 +140,25 @@ Full developer documentation: https://docs.understrap.com
     padding-right: 4rem;
 }
 
+.pr-6{
+    padding-right: 4rem;
+}
+
 .my-6{
     margin-top: 4rem;
     margin-bottom: 4rem;
 }
 
+.mr-6{
+    margin-right: 4rem;
+}
+
 .mb-6{
     margin-bottom: 4rem;
+}
+
+.mb-8{
+    margin-bottom: 5rem;
 }
 
 .mt-6{
@@ -288,6 +300,59 @@ footer .navbar-brand{
     display: block;
 }
 
+.bg-gradient-secondary{
+    background: linear-gradient(222.05deg, #35A6AC 1.24%, #8CDFE4 114.4%);
+}
+
+.bg-gradient-primary{
+    background: linear-gradient(220.27deg, #01293B 0%, #024666 97.66%);
+}
+
+.bg-gradient-mixed-primary-secondary{
+    background: linear-gradient(220.27deg, #46C3CB 0%, #024666 97.66%);
+}
+
+.relative{
+    position: relative;
+}
+
+.justify-content-evenly{
+    justify-content: space-evenly;
+}
+
+.circle{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    border: 3px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-icon{
+    width: 106px;
+    height: 106px;
+    background-color: white;
+    border: 6px solid #02374F;
+    border-radius: 100%;
+    margin: 0 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.bg-line{
+    width: 5px;
+    background-color: #C4C4C4;
+    height: 80%;
+    position: absolute;
+    left: 50%;
+    transform: translate(0%, -50%);
+    top: 50%;
+    z-index: 1;
+}
 /*-----------*/
 /*Temporaire*/
 /*cacher admin bar*/
