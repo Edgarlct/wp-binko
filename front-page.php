@@ -24,7 +24,12 @@ if (strlen($pseudo) > 1 and strlen($comment) > 1) {
     wp_redirect('http://localhost/wordpress/');
     exit;
 }
-
+$date = date_create();
+$paiment = get_page_by_path('paiment');
+$end_date = get_field('date_fin', $paiment->ID);
+$end_date = date_create($end_date);
+$end_date = date_diff($date, $end_date);
+$end_date = $end_date->format('%d');
 defined('ABSPATH') || exit;
 
 get_header();
@@ -62,12 +67,12 @@ get_header();
                     <p class="fs-2">Objectif</p>
                 </div>
                 <div class="d-flex align-items-center flex-column">
-                    <p class="mb-0 font-weight-bold fs-4 ff-ssp">36 jours</p>
+                    <p class="mb-0 font-weight-bold fs-4 ff-ssp"><?= $end_date ?> jours</p>
                     <p class="fs-2">Restants</p>
                 </div>
             </div>
             <div class="btn btn-secondary w-75 mb-5 mt-4 py-2">
-                <a class="text-uppercase my-1 font-weight-bold btn-invest fs-7 ff-ssp">Investir</a>
+                <a href="<?= get_permalink( get_page_by_path( 'paiment' ) ) ?>" class="text-uppercase my-1 font-weight-bold btn-invest fs-7 ff-ssp">Investir</a>
             </div>
         </div>
     </div>
@@ -206,7 +211,7 @@ get_header();
         <img src="https://localhost/wordpress/wp-content/uploads/2022/01/uykuyki-1.png" alt="" class="mx-auto d-block mb-6">
         <div class="d-flex flex-row justify-content-between col-11 mx-auto pb-4">
             <div class="text-white col-5">
-                <h4 class="fs-5 font-weight-medium mb-5">Poubelle classique</h4>
+                <h4 class="fs-5 font-weight-medium mb-5 text-center">Poubelle classique</h4>
                 <div class="d-flex align-items-center mb-4">
                     <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-120.png"
                          alt="" class="mr-3">
@@ -244,7 +249,7 @@ get_header();
                 </div>
             </div>
             <div class="text-white col-5">
-                <h4 class="fs-5 font-weight-medium mb-5">La solution Binko</h4>
+                <h4 class="fs-5 font-weight-medium mb-5 text-center">La solution Binko</h4>
                 <div class="d-flex align-items-center flex-row-reverse mb-4">
                     <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-96.png"
                          alt="" class="ml-3">
@@ -377,7 +382,6 @@ get_header();
                 'parent' => 0
             );
             $com = get_comments($args);
-            $date = date_create();
             foreach ($com as $comment) :
                 $comDate = $comment->comment_date;
                 $comDate = date_create($comDate);
@@ -428,7 +432,7 @@ get_header();
 </section>
 <section class="d-flex container-fluid bg-primary" id="faq">
     <div class="my-6 bg-white rounded container">
-        <p class="ff-ssp fs-6 mt-4">Écrivez un commentaire</p>
+        <p class="ff-ssp fs-6 mt-4">FAQ</p>
         <?php
         show_post('faq');
         function show_post($path)
@@ -441,8 +445,5 @@ get_header();
         ?>
     </div>
 </section>
-<div>
-    <?php show_post('stripe'); ?>
-</div>
 <?php
 get_footer();
