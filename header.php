@@ -26,7 +26,7 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
 
-    <nav class="navbar navbar-expand-md navbar-light bg-primary fixed-top">
+    <nav id="nav" class="navbar navbar-expand-md navbar-light bg-primary fixed-top">
         <div class="container-xl">
             <?php
             the_custom_logo();
@@ -37,9 +37,10 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
                 )
             );
             ?>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <button id="btnBurger" class="navbar-toggler buttonBurger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
     </nav>
+</div>
