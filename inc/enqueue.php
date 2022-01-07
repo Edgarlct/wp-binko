@@ -37,11 +37,11 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
-
+        wp_register_script( 'Chart', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js', null, null, true );
+        wp_enqueue_script('Chart');
         wp_enqueue_style('style', get_stylesheet_directory_uri(). '/style.css');
         wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/js/main.js', array(), null, true );
 	}
 } // End of if function_exists( 'understrap_scripts' ).
 
 add_action( 'wp_enqueue_scripts', 'understrap_scripts' );
-echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>';
