@@ -267,6 +267,34 @@ p{
     gap: 3rem;
     margin-bottom: 0;
 }
+@media (max-width:768px) {
+    .menu-nav-menu-container{
+        visibility: hidden;
+    }
+    .navbar{
+        align-content: start;
+    }
+}
+.height-full{
+    height: 100%;
+}
+.menu-element-active{
+    visibility: visible;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    padding: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    gap: 6rem;
+    font-size: 1.5rem;
+}
+
+.buttonBurger{
+    position: absolute;
+    right: 20px;
+}
 
 .menu-nav-menu-container > ul a{
     color: white;
@@ -361,3 +389,6 @@ footer .navbar-brand{
     visibility: hidden !important;
 }
 
+/*.navbar{*/
+/*    visibility: hidden !important;*/
+/*}*/

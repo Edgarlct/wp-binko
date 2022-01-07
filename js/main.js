@@ -64,3 +64,13 @@ function calculInvest() {
         totalAmount.innerHTML = val5.toFixed(2) + "€";
     }
 }
+
+let burgerButton = document.getElementById('btnBurger');
+let nav = document.getElementById('nav');
+let menu = document.getElementById('primary-menu');
+burgerButton.addEventListener('click', displayBurgerMenu);
+
+function displayBurgerMenu(){
+    nav.classList.toggle('height-full');
+    menu.classList.toggle('menu-element-active');
+}
