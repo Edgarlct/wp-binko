@@ -34,6 +34,33 @@ defined('ABSPATH') || exit;
 
 get_header();
 
+$post = get_page_by_path('presentation-projet');
+$fileds = get_fields($post->ID);
+
+function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = false)
+{
+    $img = $imgSrc;
+    $imgMobile = $imgSrcMobile;
+    $hiddenImgMobile = $displayImgMobile;
+
+    if ($hiddenImgMobile == false) {
+        if ($imgMobile == false) {
+            echo '<img src="' . $img['url'] . '" alt="' . $img['alt'] . '">';
+        }
+        if (is_array($imgMobile)) {
+            echo '<img src="' . $img['url'] . '" alt="' . $img['alt'] . '" class="d-lg-block d-none">';
+            echo '<img src="' . $imgMobile['url'] . '" alt="' . $img['alt'] . '"class="d-lg-none d-block">';
+        }
+
+    }
+    if ($hiddenImgMobile == true) {
+        echo '<img src="' . $img['url'] . '" alt="' . $img['alt'] . '" class="d-lg-block d-none">';
+    }
+
+}
+
+?>
+
 ?>
 <body>
 <header class="bg-primary px-3 py-6 mt-5">
@@ -79,7 +106,7 @@ get_header();
 </header>
 <section class="container-fluid d-flex flex-column justify-content-center w-fit mx-auto" id="investissement">
     <div class="d-flex justify-content-center flex-column align-items-center mt-6">
-        <p class="fs-7 font-weight-bold">Multipliez par <span class="color-secondary fs-10">3</span> votre
+        <p class="fs-7 font-weight-bold text-center">Multipliez par <span class="color-secondary fs-10">3</span> votre
             investissement initial</p>
         <p class="ff-ssp fs-6">Simulez votre investissement</p>
         <from class="w-75">
@@ -104,260 +131,166 @@ get_header();
 </section>
 <section id="projet" class="wrapper container-fluid bg-primary">
     <div class="mt-5 container bg-white rounded mx-auto px-5 py-3">
-    <h2 class="text-center fs-10">Présentation</h2>
-    <section class="bg-gradient-secondary rounded overflow-hidden">
-        <h2 class="text-center col-7 mx-auto font-weight-bold py-6 text-white fs-8">La poubelle qui reconnaît, broie et trie les déchets automatiquement</h2>
-        <div class="d-flex align-items-center justify-content-around mb-8">
-            <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-105.png" alt="">
-            <div class="d-flex flex-column col-4 pr-4">
-                <div class="d-flex align-items-center pb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/leaf-1.png"
-                         alt="" class="mr-4">
-                    <p class="mb-0 font-weight-medium text-center text-white fs-5">Totalement éco-conçue</p>
-                </div>
-                <div class="d-flex align-items-center pb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/lightbulb-1.png"
-                         alt="" class="mr-4">
-                    <p class="mb-0 font-weight-medium text-center text-white fs-5">Innovante et ludique</p>
-                </div>
-                <div class="d-flex align-items-center pb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/france-2-1.png"
-                         alt="" class="mr-4">
-                    <p class="mb-0 font-weight-medium text-center text-white fs-5">Fabriqué en France</p>
-                </div>
-                <div class="d-flex align-items-center pb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/piggy-bank-1.png"
-                         alt="" class="mr-4">
-                    <p class="mb-0 font-weight-medium text-center text-white fs-5">Financé par les communes</p>
+        <h2 class="text-center fs-10">Présentation</h2>
+        <section class="bg-gradient-secondary rounded overflow-hidden">
+            <h2 class="text-center col-7 mx-auto font-weight-bold py-6 text-white fs-8"><?= $fileds['titre_part1'] ?></h2>
+            <div class="d-flex align-items-center justify-content-around mb-8">
+                <?php displayImg($fileds['image_part1']['image_presentation'], $fileds['image_part1']['image_presentation_mobile'], $fileds['image_part1']['cacher_image_part1']); ?>
+                <div class="d-flex flex-column col-4 pr-4">
+                    <?php
+                    for ($i = 0; $i < count($fileds['liste_point_important']); $i++) {
+                        ?>
+                        <div class="d-flex align-items-center pb-4">
+                            <?php displayImg($fileds['liste_point_important'][$i]['img_point_important']); ?>
+                            <p class="mb-0 ml-4 font-weight-medium text-center text-white fs-5"><?= $fileds['liste_point_important'][$i]['text_point_important'] ?></p>
+                        </div>
+                        <?php
+                    }
+
+                    ?>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="bg-gradient-primary rounded mt-5">
-        <h2 class="text-center col-7 mx-auto font-weight-bold py-6 text-white fs-8">Du coup, on fais quoi ?</h2>
-        <div class="d-flex justify-content-between align-items-center">
-            <img src="https://localhost/wordpress/wp-content/uploads/2022/01/RB-WEITWINKELKAMERA-2-1.png"
-                 alt="">
-            <p class="w-50 fs-5 text-white font-weight-medium pr-6 text-right">On développe une caméra BREVETABLE qui reconnaît les déchets que vous lui montrez
-                !</p>
-        </div>
-        <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-119.png" alt="" class="d-block mx-auto">
-        <p class="w-75 font-weight-medium fs-5 text-white text-center mx-auto mt-6 pb-5">Elle reconnaît, broie et trie automatiquement les déchets, avant qu’ils soient
-            revalorisés</p>
-    </section>
-    <section>
-        <h2 class="text-center col-7 mx-auto font-weight-bold pt-5 pb-3 fs-8">Et ça change quoi ?</h2>
-        <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Diapo-French-Tech-1.gif"
-             alt="" class="rounded w-75 d-block mx-auto">
-        <p class="w-75 fs-5 mx-auto text-center mt-3">Binko réduit jusqu’à 12 fois la taille des déchets, dis stop aux erreurs de tri. <strong>Binko
-                Divise tes coûts de recyclage par 6 !</strong></p>
-    </section>
-    <section class="bg-gradient-primary rounded mt-5">
-        <h2 class="text-center col-7 mx-auto font-weight-bold py-6 text-white fs-8">Concrètement, comment ça fonctionne ?</h2>
-        <p class="text-center col-7 mx-auto font-weight-medium text-white fs-5">Prenons l’exemple de Mathilde, qui souhaite jeter son paquet de gateau préfère</p>
-        <div class="d-flex flex-row col-11 mx-auto justify-content-center">
-            <img src="https://localhost/wordpress/wp-content/uploads/2022/01/C3-sans-fond-1.png"
-                 alt="" class="mx-auto">
-            <div class="col-7 d-flex flex-column justify-content-evenly">
-                <div class="d-flex align-items-center text-white">
-                    <div class="circle mr-3">
-                        <p class="fs-8 font-weight-bold mb-0">1</p>
+        </section>
+        <section class="bg-gradient-primary rounded mt-5">
+            <h2 class="text-center col-7 mx-auto font-weight-bold py-6 text-white fs-8"><?= $fileds['titre_part2'] ?></h2>
+            <div class="d-flex justify-content-between align-items-center">
+                <?php displayImg($fileds['element_explication']['image_explication'], $fileds['element_explication']['image_explication_mobile'], $fileds['element_explication']['cacher_image_part2_1']); ?>
+                <div class="w-50 fs-5 text-white font-weight-medium pr-6 text-right"><?= $fileds['element_explication']['text_eplication'] ?></div>
+            </div>
+            <div class="mx-auto w-fit"><?php displayImg($fileds['image_explication_groupe']['image_explication_part2'], $fileds['image_explication_groupe']['image_explication_part2_mobile'], $fileds['image_explication_groupe']['cacher_image_part2_2']); ?></div>
+            <div class="w-75 font-weight-medium fs-5 text-white text-center mx-auto mt-6 pb-5"><?= $fileds['texte_explication_2'] ?></div>
+        </section>
+        <section>
+            <h2 class="text-center col-7 mx-auto font-weight-bold pt-5 pb-3 fs-8"><?= $fileds['titre_part3'] ?></h2>
+            <div class="rounded w-75 mx-auto">
+                <?php displayImg($fileds['image_explication']['image_explication'], $fileds['image_explication']['image_explication_mobile'], $fileds['image_explication']['cacher_image_part3']); ?>
+            </div>
+            <div class="w-75 fs-5 mx-auto text-center mt-3"><?= $fileds['texte_part3'] ?></div>
+        </section>
+        <section class="bg-gradient-primary rounded mt-5">
+            <h2 class="text-center col-7 mx-auto font-weight-bold py-6 text-white fs-8"><?= $fileds['titre_part4'] ?></h2>
+            <div class="text-center col-7 mx-auto font-weight-medium text-white fs-5"><?= $fileds['texte_part4'] ?></div>
+            <div class="d-flex flex-row col-11 mx-auto justify-content-center">
+                <div class="mx-auto w-fit">
+                    <?php displayImg($fileds['comment_fonctionne']['img_fonctionnement'], $fileds['comment_fonctionne']['img_fonctionnement_mobile'], $fileds['comment_fonctionne']['cacher_image_part4']); ?>
+                </div>
+                <div class="col-7 d-flex flex-column justify-content-evenly">
+                    <?php
+                    for ($i = 0; $i < count($fileds['comment_fonctionne']['liste_etape']); $i++) {
+                        ?>
+                        <div class="d-flex align-items-center text-white">
+                            <div class="circle mr-3">
+                                <p class="fs-8 font-weight-bold mb-0"><?= $i + 1 ?></p>
+                            </div>
+                            <p class="fs-4 mb-0 font-weight-medium"><?= $fileds['comment_fonctionne']['liste_etape'][$i]['description_etape'] ?></p>
+                        </div>
+                        <?php
+                    }
+
+                    ?>
+                </div>
+            </div>
+            <div class="w-75 fs-5 font-weight-medium text-center text-white mx-auto mt-4 pb-5"><?= $fileds['texte_part4_2'] ?></div>
+        </section>
+        <section class="bg-gradient-primary rounded mt-5">
+            <h2 class="text-center col-7 mx-auto font-weight-bold py-6 text-white fs-8"><?= $fileds['titre_part5'] ?></h2>
+            <div class="mx-auto w-fit mb-6">
+                <?php displayImg($fileds['image_part5']['image_comparaison'], $fileds['image_part5']['image_comparaison_mobile'], $fileds['image_part5']['cacher_image_part5']); ?>
+            </div>
+            <div class="d-flex flex-row justify-content-between col-11 mx-auto pb-4">
+                <div class="text-white col-5">
+                    <h4 class="fs-5 font-weight-medium mb-5 text-center"><?= $fileds['moin_comparaison']['nom_moin'] ?></h4>
+                    <?php
+                    for ($i = 0; $i < count($fileds['moin_comparaison']['liste_moin']); $i++) {
+                        ?>
+                        <div class="d-flex align-items-center mb-4">
+                            <?php displayImg($fileds['moin_comparaison']['icon_moin']); ?>
+                            <p class="mb-0 ml-3 fs-4 font-weight-light"><?= $fileds['moin_comparaison']['liste_moin'][$i]['moin_element'] ?></p>
+                        </div>
+                        <?php
+                    }
+
+                    ?>
+                </div>
+                <div class="text-white col-5">
+                    <h4 class="fs-5 font-weight-medium mb-5 text-center"><?= $fileds['meilleur_comparaison']['nom_mieux'] ?></h4>
+                    <?php
+                    for ($i = 0; $i < count($fileds['meilleur_comparaison']['liste_mieux']); $i++) {
+                        ?>
+                        <div class="d-flex align-items-center flex-row-reverse mb-4">
+                            <?php displayImg($fileds['meilleur_comparaison']['icon_mieux']); ?>
+                            <p class="mr-3 mb-0 fs-4 font-weight-light text-right"><?= $fileds['meilleur_comparaison']['liste_mieux'][$i]['mieux_element'] ?></p>
+                        </div>
+                        <?php
+                    }
+
+                    ?>
+                </div>
+            </div>
+            <?php
+            for ($i = 0; $i < count($fileds['egale_comparaison']['liste_egale']); $i++) {
+                ?>
+                <div class="d-flex align-items-center flex-row pb-4 w-fit mx-auto text-white">
+                    <?php displayImg($fileds['egale_comparaison']['icon_egale']); ?>
+                    <p class="mx-3 mb-0 fs-4 font-weight-light text-right"><?= $fileds['egale_comparaison']['liste_egale'][$i]['egale_element'] ?></p>
+                    <?php displayImg($fileds['egale_comparaison']['icon_egale']); ?>
+                </div>
+                <?php
+            }
+
+            ?>
+        </section>
+        <section>
+            <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center py-6"><?= $fileds['titre_part6'] ?></h2>
+            <div class="d-flex align-items-center justify-content-around mb-5">
+                <div class="col-6 fs-5">
+                    <div class="mb-4"><?= $fileds['texte_part6'] ?></div>
+                </div>
+                <?php displayImg($fileds['image_part6']['image_part6_web'], $fileds['image_part6']['image_part6_mobile'], $fileds['image_part6']['cacher_image_part6']); ?>
+            </div>
+        </section>
+        <section class="rounded bg-gradient-mixed-primary-secondary mb-5">
+            <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center py-6 text-white"><?= $fileds['titre_part7'] ?></h2>
+            <div class="d-flex col-11 align-items-center justify-content-around pb-5 mx-auto">
+                <?php displayImg($fileds['image_part7']['image_part7_web'], $fileds['image_part7']['image_part7_mobile'], $fileds['image_part7']['cacher_image_part7']); ?>
+                <div class="text-white col-6 fs-5">
+                    <?= $fileds['texte_part7'] ?>
+                </div>
+            </div>
+        </section>
+        <section class="rounded bg-gradient-primary mb-5">
+            <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center py-6 text-white"><?= $fileds['texte_part8'] ?></h2>
+            <div class="d-flex flex-column align-content-between col-11 mx-auto pb-5">
+                <span class="bg-line"></span>
+                <?php
+                for ($i = 0; $i < count($fileds['list_future']); $i++) {
+                    ?>
+                    <div class="d-flex align-items-center flex-row pb-4 w-fit mx-auto text-white">
+                        <?php displayImg($fileds['list_future']['icon_egale']); ?>
+                        <p class="mx-3 mb-0 fs-4 font-weight-light text-right"><?= $fileds['list_future']['liste_egale'][$i]['egale_element'] ?></p>
+                        <?php displayImg($fileds['list_future']['icon_egale']); ?>
                     </div>
-                    <p class="fs-4 mb-0 font-weight-medium">La caméra reconnaît l’emballage</p>
-                </div>
-                <div class="d-flex align-items-center text-white">
-                    <div class="circle mr-3">
-                        <p class="fs-8 font-weight-bold mb-0">2</p>
+                    <div class="fs-5 text-white font-weight-light d-flex justify-content-center align-items-center mb-5">
+                        <p class="col-4 text-center"><?= $fileds['list_future'][$i]['date_suite'] ?></p>
+                        <div class="circle-icon">
+                            <?php displayImg($fileds['list_future'][$i]['icon_illustration_future']); ?>
+                        </div>
+                        <p class="col-4 text-center"><?= $fileds['list_future'][$i]['nom_suite'] ?></p>
                     </div>
-                    <p class="fs-4 mb-0 font-weight-medium">Binko catégorise le produit</p>
-                </div>
-                <div class="d-flex align-items-center text-white">
-                    <div class="circle mr-3">
-                        <p class="fs-8 font-weight-bold mb-0">3</p>
-                    </div>
-                    <p class="fs-4 mb-0 font-weight-medium">Le paquet de gâteau est broyé</p>
-                </div>
-                <div class="d-flex align-items-center text-white">
-                    <div class="circle mr-3">
-                        <p class="fs-8 font-weight-bold mb-0">4</p>
-                    </div>
-                    <p class="fs-4 mb-0 font-weight-medium">Le carton est trié vers le bon bac</p>
-                </div>
-                <div class="d-flex align-items-center text-white">
-                    <div class="circle mr-3">
-                        <p class="fs-8 font-weight-bold mb-0">5</p>
-                    </div>
-                    <p class="fs-4 mb-0 font-weight-medium">Nous collections le bac quand il est plein</p>
-                </div>
-                <div class="d-flex align-items-center text-white">
-                    <div class="circle mr-3">
-                        <p class="fs-8 font-weight-bold mb-0">6</p>
-                    </div>
-                    <p class="fs-4 mb-0 font-weight-medium">Il est envoyé au centre de recyclage</p>
-                </div>
-                <div class="d-flex align-items-center text-white">
-                    <div class="circle mr-3">
-                        <p class="fs-8 font-weight-bold mb-0">7</p>
-                    </div>
-                    <p class="fs-4 mb-0 font-weight-medium">Le paquet de gâteau est revalorisé</p>
-                </div>
+                    <?php
+                }
+
+                ?>
             </div>
-        </div>
-        <p class="w-75 fs-5 font-weight-medium text-center text-white mx-auto mt-4 pb-5">Globalement, ça ne change presque rien pour toi, il te suffit juste de scanner et de
-            sortir trois fois moins tes poubelles...</p>
-    </section>
-    <section class="bg-gradient-primary rounded mt-5">
-        <h2 class="text-center col-7 mx-auto font-weight-bold py-6 text-white fs-8">Ce que ça change réellement</h2>
-        <img src="https://localhost/wordpress/wp-content/uploads/2022/01/uykuyki-1.png" alt="" class="mx-auto d-block mb-6">
-        <div class="d-flex flex-row justify-content-between col-11 mx-auto pb-4">
-            <div class="text-white col-5">
-                <h4 class="fs-5 font-weight-medium mb-5 text-center">Poubelle classique</h4>
-                <div class="d-flex align-items-center mb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-120.png"
-                         alt="" class="mr-3">
-                    <p class="mb-0 fs-4 font-weight-light">recycle 26% des déchets</p>
-                </div>
-                <div class="d-flex align-items-center mb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-120.png"
-                         alt="" class="mr-3">
-                    <p class="mb-0 fs-4 font-weight-light">revalorise 1 / 10 des emballages plastique</p>
-                </div>
-                <div class="d-flex align-items-center mb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-120.png"
-                         alt="" class="mr-3">
-                    <p class="mb-0 fs-4 font-weight-light">coûte 766 millions d’euros mensuel</p>
-                </div>
-                <div class="d-flex align-items-center mb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-120.png"
-                         alt="" class="mr-3">
-                    <p class="mb-0 fs-4 font-weight-light">represent 5 % des émissions de CO2</p>
-                </div>
-                <div class="d-flex align-items-center mb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-120.png"
-                         alt="" class="mr-3">
-                    <p class="mb-0 fs-4 font-weight-light">des sacs-poubelles fragiles et odorants</p>
-                </div>
-                <div class="d-flex align-items-center mb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-120.png"
-                         alt="" class="mr-3">
-                    <p class="mb-0 fs-4 font-weight-light">à sortir deux fois par semaines</p>
-                </div>
-                <div class="d-flex align-items-center mb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-103.png"
-                         alt="" class="mr-3">
-                    <p class="mb-0 fs-4 font-weight-ligh font-weight-lightt">financée par nos impôts : la TEOM</p>
-                </div>
+        </section>
+        <section class="bg-gradient-primary mb-5 rounded">
+            <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center pt-4 pb-2 text-white"><?= $fileds['texte_part8'] ?></h2>
+            <div class="mx-auto w-fit">
+                <?php displayImg($fileds['image_part9']['image_part9_web'], $fileds['image_part9']['image_part9_mobile']); ?>
             </div>
-            <div class="text-white col-5">
-                <h4 class="fs-5 font-weight-medium mb-5 text-center">La solution Binko</h4>
-                <div class="d-flex align-items-center flex-row-reverse mb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-96.png"
-                         alt="" class="ml-3">
-                    <p class="mb-0 fs-4 font-weight-light text-right">recycle 71% des déchets</p>
-                </div>
-                <div class="d-flex align-items-center flex-row-reverse mb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-96.png"
-                         alt="" class="ml-3">
-                    <p class="mb-0 fs-4 font-weight-light text-right">emballages plastiques : revalorisés à 89%</p>
-                </div>
-                <div class="d-flex align-items-center flex-row-reverse mb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-96.png"
-                         alt="" class="ml-3">
-                    <p class="mb-0 fs-4 font-weight-light text-right">divise par 6 le coût du recyclage du déchet</p>
-                </div>
-                <div class="d-flex align-items-center flex-row-reverse mb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-96.png"
-                         alt="" class="ml-3">
-                    <p class="mb-0 fs-4 font-weight-light text-right">représente 40% d’émissions en moins</p>
-                </div>
-                <div class="d-flex align-items-center flex-row-reverse mb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-96.png"
-                         alt="" class="ml-3">
-                    <p class="mb-0 fs-4 font-weight-light text-right">des bacs hermétiques, inodores et solide</p>
-                </div>
-                <div class="d-flex align-items-center flex-row-reverse mb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-96.png"
-                         alt="" class="ml-3">
-                    <p class="mb-0 fs-4 font-weight-light text-right">à sortir une à deux fois par mois</p>
-                </div>
-                <div class="d-flex align-items-center flex-row-reverse mb-4">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/Group-103.png"
-                         alt="" class="ml-3">
-                    <p class="mb-0 fs-4 font-weight-light text-right">financée par nos impôts : la TEOM</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center py-6">Et cette caméra, comment elle peut détécter tout ça ?</h2>
-        <div class="d-flex align-items-center justify-content-around mb-5">
-            <div class="col-6 fs-5">
-                <p class="mb-4">Notre technologies est basée sur une intelligence artificielle de reconnaissance
-                    de forme, de texte, de code barre et de QR code, que nous avons développée avec
-                    notre <strong>partenaire Google France</strong></p>
-                <p>Nous avons constitué une base de données de <strong>819 120</strong> produits
-                    pour identifier un maximum de déchets</p>
-            </div>
-            <img src="https://localhost/wordpress/wp-content/uploads/2022/01/image-2.png" alt="">
-        </div>
-    </section>
-    <section class="rounded bg-gradient-mixed-primary-secondary mb-5">
-        <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center py-6 text-white">Et combien ça va coûter ?</h2>
-        <div class="d-flex col-11 align-items-center justify-content-around pb-5 mx-auto">
-            <img src="https://localhost/wordpress/wp-content/uploads/2022/01/4-copie-2-1-1.png"
-                 alt="">
-            <div class="text-white col-6 fs-5">
-                <p class="mb-4">Bah rien en fait...</p>
-                <p>Nos clients sont les communes. Elles achètent nos Binkos et les installent
-                    gratuitement, réduisant ainsi le nombre de camions poubelles et le besoin en
-                    centre de tri. Cerise sur le gâteau, la solution est entièrement fiancée avec la
-                    taxe d’enlèvement des ordures ménagères !</p>
-            </div>
-        </div>
-    </section>
-    <section class="rounded bg-gradient-primary mb-5">
-        <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center py-6 text-white">Et ensuite ?</h2>
-        <div class="d-flex flex-column align-content-between col-11 mx-auto pb-5">
-            <span class="bg-line"></span>
-            <div class="fs-5 text-white font-weight-light d-flex justify-content-center align-items-center mb-5">
-                <p class="col-4 text-center">Novembre 2021</p>
-                <div class="circle-icon">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/piggy-bank-1-1.png"
-                         alt="" class="mx-auto d-block">
-                </div>
-                <p class="col-4 text-center">Crowdfounding</p>
-            </div>
-            <div class="fs-5 text-white font-weight-light d-flex justify-content-center align-items-center mb-5">
-                <p class="col-4 text-center">janvier 2022</p>
-                <div class="circle-icon">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/production-1.png"
-                         alt="" class="mx-auto d-block">
-                </div>
-                <p class="col-4 text-center">Pré-industrilsation Bureau d’étude</p>
-            </div>
-            <div class="fs-5 text-white font-weight-light d-flex justify-content-center align-items-center mb-5">
-                <p class="col-4 text-center">Mai 2022</p>
-                <div class="circle-icon">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/search-1.png"
-                         alt="" class="mx-auto d-block">
-                </div>
-                <p class="col-4 text-center">Phase de test (6 mois) Yvelines</p>
-            </div>
-            <div class="fs-5 text-white font-weight-light d-flex justify-content-center align-items-center">
-                <p class="col-4 text-center">Octobre 2022</p>
-                <div class="circle-icon">
-                    <img src="https://localhost/wordpress/wp-content/uploads/2022/01/flag-1.png"
-                         alt="" class="mx-auto d-block">
-                </div>
-                <p class="col-4 text-center">Première commune cliente</p>
-            </div>
-        </div>
-    </section>
-    <section class="bg-gradient-primary mb-5 rounded">
-        <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center pt-4 pb-2 text-white">Ils nous soutiennent déjà</h2>
-        <img src="https://localhost/wordpress/wp-content/uploads/2022/01/cfzefzerfzef-1.png" alt="" class="d-block mx-auto">
-    </section>
-</div>
+
+        </section>
+    </div>
 </section>
 <section class="container-fluid d-flex flex-column justify-content-center bg-primary" id="commentaire">
     <div class="mt-6 bg-white rounded d-flex flex-column container">
@@ -441,7 +374,6 @@ get_header();
             $content = apply_filters('the_content', $post->post_content);
             echo $content;
         }
-
         ?>
     </div>
 </section>
