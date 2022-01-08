@@ -21,7 +21,7 @@
 
         <div class="wrapper" id="page-wrapper">
 
-            <div class="<?php echo esc_attr($container); ?> mt-5" id="content" tabindex="-1">
+            <div class="<?php echo esc_attr($container); ?>" id="content" tabindex="-1">
 
                 <div class="d-flex flex-lg-row flex-column-reverse">
 
@@ -60,8 +60,8 @@
                         <?php
                         while (have_posts()) {
                             the_post();
-                            $a = $post->post_content;
-                            echo do_shortcode($a);
+                            give_get_template_part( 'single-give-form/content', 'single-give-form' );
+
                         }
                         ?>
                     </section>
