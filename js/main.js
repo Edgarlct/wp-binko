@@ -67,10 +67,12 @@ function calculInvest() {
 
 let burgerButton = document.getElementById('btnBurger');
 let nav = document.getElementById('nav');
-let menu = document.getElementById('primary-menu');
+let menu = document.getElementById('menu-item');
+let menuWP = document.getElementById('primary-menu');
 burgerButton.addEventListener('click', displayBurgerMenu);
 
 function displayBurgerMenu(){
     nav.classList.toggle('height-full');
     menu.classList.toggle('menu-element-active');
+    menuWP.classList.toggle('menuWP-element-active');
 }

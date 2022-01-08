@@ -6,6 +6,9 @@
  *
  * @package Understrap
  */
+global $wpdb;
+$link = $wpdb->get_results("SELECT guid FROM {$wpdb->prefix}posts WHERE post_title LIKE '%validate%' AND post_name = 'donation-form'", OBJECT);
+$link = $link[0]->guid;
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
@@ -28,8 +31,12 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 
     <nav id="nav" class="navbar navbar-expand-md navbar-light bg-primary fixed-top">
         <div class="container-xl">
+
             <?php
             the_custom_logo();
+            ?>
+            <div class="d-flex align-items-center nav-menu" id="menu-item">
+            <?php
             wp_nav_menu(
                 array(
                     'theme_location' => 'nav-menu',
@@ -37,6 +44,10 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
                 )
             );
             ?>
+                <div class="btn btn-secondary px-4 rounded">
+                    <a href="<?= $link ?>" class="text-white">INVESTIR</a>
+                </div>
+            </div>
             <button id="btnBurger" class="navbar-toggler buttonBurger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

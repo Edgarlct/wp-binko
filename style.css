@@ -267,8 +267,12 @@ p{
     gap: 3rem;
     margin-bottom: 0;
 }
+
+.nav-menu{
+    gap: 3rem;
+}
 @media (max-width:768px) {
-    .menu-nav-menu-container{
+    .nav-menu{
         visibility: hidden;
     }
     .navbar{
@@ -287,6 +291,17 @@ p{
     left: 50%;
     transform: translate(-50%, -50%);
     top: 50%;
+    gap: 9rem;
+    font-size: 1.5rem;
+}
+
+.menuWP-element-active{
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    padding: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
     gap: 6rem;
     font-size: 1.5rem;
 }
@@ -298,21 +313,6 @@ p{
 
 .menu-nav-menu-container > ul a{
     color: white;
-}
-
-.menu-nav-menu-container > ul > li:last-of-type > a{
-    background-color: #3FC2CA;
-    border-color: #3FC2CA;
-    border-radius: 7px;
-    text-transform: uppercase;
-    padding: .5rem 1.5rem;
-    transition: .15s ease-in;
-    text-decoration: none;
-}
-
-.menu-nav-menu-container > ul > li:last-of-type > a:hover{
-    background-color: #2EA1A8;
-    border-color: #2EA1A8;
 }
 
 footer .navbar-brand{
