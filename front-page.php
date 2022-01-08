@@ -1,9 +1,9 @@
 <?php
-global $wpdb;
-$results = $wpdb->get_results("SELECT meta_key, meta_value FROM {$wpdb->prefix}give_formmeta f 
+
+$results = $wpdb->get_results("SELECT meta_key, meta_value, p.guid FROM {$wpdb->prefix}give_formmeta f 
     JOIN {$wpdb->prefix}posts p  on f.form_id = p.ID 
 WHERE (meta_key IN ('_give_set_goal', '_give_form_goal_progress', '_give_form_earnings', '_give_form_sales') 
-           AND p.post_name = 'donation-form' AND p.post_title LIKE '%validate%')", OBJECT);
+           AND p.post_name = 'donation-form' AND p.post_title LIKE '%validate%')" , OBJECT);
 
 // cut in array value for get only int
 $amount = explode('.', $results[3]->meta_value);
@@ -61,7 +61,6 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
 
 ?>
 
-?>
 <body>
 <header class="bg-primary px-3 py-6 mt-5">
     <div class="container-xl d-flex justify-content-between align-items-center text-white">
@@ -99,7 +98,7 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
                 </div>
             </div>
             <div class="btn btn-secondary w-75 mb-5 mt-4 py-2">
-                <a href="<?= get_permalink( get_page_by_path( 'paiment' ) ) ?>" class="text-uppercase my-1 font-weight-bold btn-invest fs-7 ff-ssp">Investir</a>
+                <a href="<?= $results[0]->guid ?>" class="text-uppercase my-1 font-weight-bold btn-invest fs-7 ff-ssp">Investir</a>
             </div>
         </div>
     </div>
