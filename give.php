@@ -55,7 +55,7 @@
                                       class="hiden mb-1 text-danger">Veuillez entrez un chiffre valable</span>
                             </from>
                             <div class="w-75">
-                                <a href="#" class="btn btn-outline-primary w-100">CONTRAT INVESTISSEUR (PDF)</a>
+                                <a href="<?= $data['contrat'] ?>" class="btn btn-outline-primary w-100">CONTRAT INVESTISSEUR (PDF)</a>
                             </div>
                         </div>
                         <div class="ff-ssp w-75 mx-auto mb-6 mt-4">
