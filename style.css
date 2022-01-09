@@ -308,6 +308,7 @@ p{
     visibility: visible;
     flex-direction: column;
     align-items: center;
+    position: absolute;
     padding: 0;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -319,6 +320,7 @@ p{
 .menuWP-element-active{
     flex-direction: column;
     align-items: center;
+    position: absolute;
     padding: 0;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -417,6 +419,12 @@ footer .navbar-brand{
         justify-content: center;
         align-items: center;
         z-index: 2;
+    }
+
+    .menu-nav-footer-container > ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 

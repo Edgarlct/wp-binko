@@ -18,9 +18,9 @@ $container = get_theme_mod('understrap_container_type');
 <div class="wrapper bg-primary" id="wrapper-footer">
     <footer class="site-footer" id="colophon">
 
-        <div class="site-info container-xl d-flex justify-content-between row text-white ff-ssp mx-auto">
+        <div class="site-info container-xl d-flex justify-content-between flex-md-row flex-column align-items-md-start align-items-center text-white ff-ssp mx-auto">
             <?php the_custom_logo(); ?>
-            <div>
+            <div class="d-flex flex-column align-items-md-start align-items-center">
                 <p class="font-weight-light">Pour nous suivre </p>
                 <?php
                 wp_nav_menu(
@@ -31,7 +31,7 @@ $container = get_theme_mod('understrap_container_type');
                 );
                 ?>
             </div>
-            <div>
+            <div class="d-flex flex-column align-items-md-start align-items-center">
                 <p class="font-weight-light">Pages</p>
                 <?php
                 wp_nav_menu(
