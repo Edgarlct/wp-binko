@@ -138,14 +138,14 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
         <canvas id="myChart" width="400" height="200"></canvas>
     </div>
 </section>
-<section id="projet" class="wrapper container-fluid bg-primary">
-    <div class="mt-5 container bg-white rounded mx-auto px-5 py-3">
+<section id="projet" class="container-fluid bg-primary py-6">
+    <div class="mt-5 container bg-white rounded mx-auto px-2 px-sm-5 py-3">
         <h2 class="text-center fs-10">Présentation</h2>
         <section class="bg-gradient-secondary rounded overflow-hidden">
-            <h2 class="text-center col-7 mx-auto font-weight-bold py-6 text-white fs-8"><?= $fileds['titre_part1'] ?></h2>
-            <div class="d-flex align-items-center justify-content-around mb-8">
+            <h2 class="text-center col-12 col-lg-7 mx-sm-auto font-weight-bold py-6 text-white fs-md-8 fs-5"><?= $fileds['titre_part1'] ?></h2>
+            <div class="d-flex align-items-center justify-content-around mb-5 mb-lg-8 flex-lg-row flex-column">
                 <?php displayImg($fileds['image_part1']['image_presentation'], $fileds['image_part1']['image_presentation_mobile'], $fileds['image_part1']['cacher_image_part1']); ?>
-                <div class="d-flex flex-column col-4 pr-4">
+                <div class="d-flex flex-column col-lg-4 col-md-5 col-sm-7 col-11 pr-4 mt-5 mt-lg-0">
                     <?php
                     for ($i = 0; $i < count($fileds['liste_point_important']); $i++) {
                         ?>
@@ -161,37 +161,39 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
             </div>
         </section>
         <section class="bg-gradient-primary rounded mt-5">
-            <h2 class="text-center col-7 mx-auto font-weight-bold py-6 text-white fs-8"><?= $fileds['titre_part2'] ?></h2>
+            <h2 class="text-center col-md-8 col-10 mx-auto font-weight-bold py-6 text-white fs-md-8 fs-5"><?= $fileds['titre_part2'] ?></h2>
             <div class="d-flex justify-content-between align-items-center">
+                <div class="col-5 col-md-7 p-0">
                 <?php displayImg($fileds['element_explication']['image_explication'], $fileds['element_explication']['image_explication_mobile'], $fileds['element_explication']['cacher_image_part2_1']); ?>
-                <div class="w-50 fs-5 text-white font-weight-medium pr-6 text-right"><?= $fileds['element_explication']['text_eplication'] ?></div>
+                </div>
+                <div class="w-50 fs-md-5 fs-3 text-white font-weight-medium pr-md-6 pr-3 text-right"><?= $fileds['element_explication']['text_eplication'] ?></div>
             </div>
             <div class="mx-auto w-fit"><?php displayImg($fileds['image_explication_groupe']['image_explication_part2'], $fileds['image_explication_groupe']['image_explication_part2_mobile'], $fileds['image_explication_groupe']['cacher_image_part2_2']); ?></div>
-            <div class="w-75 font-weight-medium fs-5 text-white text-center mx-auto mt-6 pb-5"><?= $fileds['texte_explication_2'] ?></div>
+            <div class="w-75 font-weight-medium fs-md-5 fs-4 text-white text-center mx-auto mt-6 pb-5"><?= $fileds['texte_explication_2'] ?></div>
         </section>
         <section>
-            <h2 class="text-center col-7 mx-auto font-weight-bold pt-5 pb-3 fs-8"><?= $fileds['titre_part3'] ?></h2>
-            <div class="rounded w-75 mx-auto">
+            <h2 class="text-center col-7 mx-auto font-weight-bold pt-5 pb-3 fs-md-8 fs-5"><?= $fileds['titre_part3'] ?></h2>
+            <div class="rounded-gif col-md-9 mx-auto">
                 <?php displayImg($fileds['image_explication']['image_explication'], $fileds['image_explication']['image_explication_mobile'], $fileds['image_explication']['cacher_image_part3']); ?>
             </div>
             <div class="w-75 fs-5 mx-auto text-center mt-3"><?= $fileds['texte_part3'] ?></div>
         </section>
         <section class="bg-gradient-primary rounded mt-5">
-            <h2 class="text-center col-7 mx-auto font-weight-bold py-6 text-white fs-8"><?= $fileds['titre_part4'] ?></h2>
-            <div class="text-center col-7 mx-auto font-weight-medium text-white fs-5"><?= $fileds['texte_part4'] ?></div>
+            <h2 class="text-center col-lg-7 col-12 mx-auto font-weight-bold py-6 text-white fs-md-8 fs-5"><?= $fileds['titre_part4'] ?></h2>
+            <div class="text-center col-lg-7 col-12 mx-auto font-weight-medium text-white fs-5"><?= $fileds['texte_part4'] ?></div>
             <div class="d-flex flex-row col-11 mx-auto justify-content-center">
                 <div class="mx-auto w-fit">
                     <?php displayImg($fileds['comment_fonctionne']['img_fonctionnement'], $fileds['comment_fonctionne']['img_fonctionnement_mobile'], $fileds['comment_fonctionne']['cacher_image_part4']); ?>
                 </div>
-                <div class="col-7 d-flex flex-column justify-content-evenly">
+                <div class="col-lg-7 col-md-11 col-12 d-flex flex-column justify-content-evenly">
                     <?php
                     for ($i = 0; $i < count($fileds['comment_fonctionne']['liste_etape']); $i++) {
                         ?>
-                        <div class="d-flex align-items-center text-white">
+                        <div class="d-flex align-items-center text-white flex-wrap justify-content-sm-start justify-content-center flex-sm-row flex-column mb-lg-0 mb-3">
                             <div class="circle mr-3">
-                                <p class="fs-8 font-weight-bold mb-0"><?= $i + 1 ?></p>
+                                <p class="fs-md-8 fs-4 font-weight-bold mb-0"><?= $i + 1 ?></p>
                             </div>
-                            <p class="fs-4 mb-0 font-weight-medium"><?= $fileds['comment_fonctionne']['liste_etape'][$i]['description_etape'] ?></p>
+                            <p class="fs-md-4 fs-3 mb-0 font-weight-medium text-center"><?= $fileds['comment_fonctionne']['liste_etape'][$i]['description_etape'] ?></p>
                         </div>
                         <?php
                     }
@@ -202,19 +204,19 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
             <div class="w-75 fs-5 font-weight-medium text-center text-white mx-auto mt-4 pb-5"><?= $fileds['texte_part4_2'] ?></div>
         </section>
         <section class="bg-gradient-primary rounded mt-5">
-            <h2 class="text-center col-7 mx-auto font-weight-bold py-6 text-white fs-8"><?= $fileds['titre_part5'] ?></h2>
+            <h2 class="text-center col-md-7 col-10 mx-auto font-weight-bold py-6 text-white fs-md-8 fs-5"><?= $fileds['titre_part5'] ?></h2>
             <div class="mx-auto w-fit mb-6">
                 <?php displayImg($fileds['image_part5']['image_comparaison'], $fileds['image_part5']['image_comparaison_mobile'], $fileds['image_part5']['cacher_image_part5']); ?>
             </div>
             <div class="d-flex flex-row justify-content-between col-11 mx-auto pb-4">
                 <div class="text-white col-5">
-                    <h4 class="fs-5 font-weight-medium mb-5 text-center"><?= $fileds['moin_comparaison']['nom_moin'] ?></h4>
+                    <h4 class="fs-md-5 fs-4 font-weight-medium mb-5 text-center"><?= $fileds['moin_comparaison']['nom_moin'] ?></h4>
                     <?php
                     for ($i = 0; $i < count($fileds['moin_comparaison']['liste_moin']); $i++) {
                         ?>
-                        <div class="d-flex align-items-center mb-4">
+                        <div class="d-flex align-items-center mb-4 flex-md-row flex-column">
                             <?php displayImg($fileds['moin_comparaison']['icon_moin']); ?>
-                            <p class="mb-0 ml-3 fs-4 font-weight-light"><?= $fileds['moin_comparaison']['liste_moin'][$i]['moin_element'] ?></p>
+                            <p class="mb-0 ml-md-3 fs-4 font-weight-light text-md-left text-center"><?= $fileds['moin_comparaison']['liste_moin'][$i]['moin_element'] ?></p>
                         </div>
                         <?php
                     }
@@ -222,13 +224,13 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
                     ?>
                 </div>
                 <div class="text-white col-5">
-                    <h4 class="fs-5 font-weight-medium mb-5 text-center"><?= $fileds['meilleur_comparaison']['nom_mieux'] ?></h4>
+                    <h4 class="fs-md-5 fs4 font-weight-medium mb-5 text-center"><?= $fileds['meilleur_comparaison']['nom_mieux'] ?></h4>
                     <?php
                     for ($i = 0; $i < count($fileds['meilleur_comparaison']['liste_mieux']); $i++) {
                         ?>
-                        <div class="d-flex align-items-center flex-row-reverse mb-4">
+                        <div class="d-flex align-items-center flex-md-row-reverse mb-4 flex-column">
                             <?php displayImg($fileds['meilleur_comparaison']['icon_mieux']); ?>
-                            <p class="mr-3 mb-0 fs-4 font-weight-light text-right"><?= $fileds['meilleur_comparaison']['liste_mieux'][$i]['mieux_element'] ?></p>
+                            <p class="mr-md-3 mb-0 fs-4 font-weight-light text-md-right text-center"><?= $fileds['meilleur_comparaison']['liste_mieux'][$i]['mieux_element'] ?></p>
                         </div>
                         <?php
                     }
@@ -241,7 +243,7 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
                 ?>
                 <div class="d-flex align-items-center flex-row pb-4 w-fit mx-auto text-white">
                     <?php displayImg($fileds['egale_comparaison']['icon_egale']); ?>
-                    <p class="mx-3 mb-0 fs-4 font-weight-light text-right"><?= $fileds['egale_comparaison']['liste_egale'][$i]['egale_element'] ?></p>
+                    <p class="mx-3 mb-0 fs-4 font-weight-light text-center"><?= $fileds['egale_comparaison']['liste_egale'][$i]['egale_element'] ?></p>
                     <?php displayImg($fileds['egale_comparaison']['icon_egale']); ?>
                 </div>
                 <?php
@@ -250,41 +252,38 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
             ?>
         </section>
         <section>
-            <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center py-6"><?= $fileds['titre_part6'] ?></h2>
+            <h2 class="col-10 fs-md-8 fs-4 font-weight-bold mx-auto text-center py-6"><?= $fileds['titre_part6'] ?></h2>
             <div class="d-flex align-items-center justify-content-around mb-5">
-                <div class="col-6 fs-5">
+                <div class="col-md-6 col-7 fs-md-5 fs-3">
                     <div class="mb-4"><?= $fileds['texte_part6'] ?></div>
                 </div>
-                <?php displayImg($fileds['image_part6']['image_part6_web'], $fileds['image_part6']['image_part6_mobile'], $fileds['image_part6']['cacher_image_part6']); ?>
+                <div class="col-md-6 col-5 d-flex justify-content-center">
+                    <?php displayImg($fileds['image_part6']['image_part6_web'], $fileds['image_part6']['image_part6_mobile'], $fileds['image_part6']['cacher_image_part6']); ?>
+                </div>
             </div>
         </section>
         <section class="rounded bg-gradient-mixed-primary-secondary mb-5">
-            <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center py-6 text-white"><?= $fileds['titre_part7'] ?></h2>
+            <h2 class="col-10 fs-md-8 fs-5 font-weight-bold mx-auto text-center py-6 text-white"><?= $fileds['titre_part7'] ?></h2>
             <div class="d-flex col-11 align-items-center justify-content-around pb-5 mx-auto">
                 <?php displayImg($fileds['image_part7']['image_part7_web'], $fileds['image_part7']['image_part7_mobile'], $fileds['image_part7']['cacher_image_part7']); ?>
-                <div class="text-white col-6 fs-5">
+                <div class="text-white col-lg-6 col-11 fs-5">
                     <?= $fileds['texte_part7'] ?>
                 </div>
             </div>
         </section>
         <section class="rounded bg-gradient-primary mb-5">
-            <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center py-6 text-white"><?= $fileds['titre_part8'] ?></h2>
-            <div class="d-flex flex-column align-content-between col-11 mx-auto pb-5">
+            <h2 class="col-10 fs-md-8 fs-5 font-weight-bold mx-auto text-center py-6 text-white"><?= $fileds['titre_part8'] ?></h2>
+            <div class="d-flex flex-column align-content-between col-12 mx-auto pb-5">
                 <span class="bg-line"></span>
                 <?php
                 for ($i = 0; $i < count($fileds['list_future']); $i++) {
                     ?>
-                    <div class="d-flex align-items-center flex-row pb-4 w-fit mx-auto text-white">
-                        <?php displayImg($fileds['list_future']['icon_egale']); ?>
-                        <p class="mx-3 mb-0 fs-4 font-weight-light text-right"><?= $fileds['list_future']['liste_egale'][$i]['egale_element'] ?></p>
-                        <?php displayImg($fileds['list_future']['icon_egale']); ?>
-                    </div>
-                    <div class="fs-5 text-white font-weight-light d-flex justify-content-center align-items-center mb-5">
-                        <p class="col-4 text-center"><?= $fileds['list_future'][$i]['date_suite'] ?></p>
+                    <div class="fs-md-5 fs-3 text-white font-weight-light d-flex justify-content-center align-items-center mb-sm-5 mb-3">
+                        <p class="col-4 px-0 text-center"><?= $fileds['list_future'][$i]['date_suite'] ?></p>
                         <div class="circle-icon">
                             <?php displayImg($fileds['list_future'][$i]['icon_illustration_future']); ?>
                         </div>
-                        <p class="col-4 text-center"><?= $fileds['list_future'][$i]['nom_suite'] ?></p>
+                        <p class="col-4 px-0 text-center"><?= $fileds['list_future'][$i]['nom_suite'] ?></p>
                     </div>
                     <?php
                 }
@@ -293,7 +292,7 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
             </div>
         </section>
         <section class="bg-gradient-primary mb-5 rounded">
-            <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center pt-4 pb-2 text-white"><?= $fileds['titre_part9'] ?></h2>
+            <h2 class="col-10 fs-md-8 fs-5 font-weight-bold mx-auto text-center pt-4 pb-2 text-white"><?= $fileds['titre_part9'] ?></h2>
             <div class="mx-auto w-fit">
                 <?php displayImg($fileds['image_part9']['image_part9_web'], $fileds['image_part9']['image_part9_mobile']); ?>
             </div>

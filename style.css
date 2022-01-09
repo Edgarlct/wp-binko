@@ -169,6 +169,10 @@ Full developer documentation: https://docs.understrap.com
     font-size: 0.75rem;
 }
 
+.fs-3{
+    font-size: 1rem;
+}
+
 .fs-4{
     font-size: 1.25rem;
 }
@@ -195,6 +199,23 @@ Full developer documentation: https://docs.understrap.com
 
 .fs-10{
     font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+    .fs-md-5{
+        font-size: 1.5rem;
+    }
+    .fs-md-8{
+        font-size: 2.25rem;
+    }
+}
+
+@media (min-width: 576px) {
+    .justify-content-sm-start{
+        -webkit-justify-content: flex-start !important;
+        -ms-flex-pack: start !important;
+        justify-content: flex-start !important;
+    }
 }
 
 .w-fit{
@@ -357,6 +378,18 @@ footer .navbar-brand{
     align-items: center;
 }
 
+@media (max-width:576px) {
+    .circle{
+        width: 2rem;
+        height: 2rem;
+        border-radius: 100%;
+        border: 3px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .circle-icon{
     width: 106px;
     height: 106px;
@@ -370,15 +403,51 @@ footer .navbar-brand{
     z-index: 2;
 }
 
+@media (max-width:768px) {
+
+    .circle-icon{
+        width: 80px;
+        height: 80px;
+        padding: 4%;
+        background-color: white;
+        border: 6px solid #02374F;
+        border-radius: 100%;
+        margin: 0 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+    }
+}
+
+@media (max-width:576px) {
+    .circle-icon{
+        width: 60px;
+        height: 60px;
+        padding: 4%;
+        background-color: white;
+        border: 6px solid #02374F;
+        border-radius: 100%;
+        margin: 0 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+    }
+}
+
 .bg-line{
     width: 5px;
     background-color: #C4C4C4;
-    height: 70%;
+    height: 75%;
     position: absolute;
     left: 50%;
-    transform: translate(0%, -50%);
-    top: 50%;
+    transform: translate(-50%, 5%);
     z-index: 1;
+}
+
+.rounded-gif > img{
+    border-radius: 7px;
 }
 /*-----------*/
 /*Temporaire*/
