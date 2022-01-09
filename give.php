@@ -17,7 +17,18 @@
 
     $container = get_theme_mod('understrap_container_type');
 
+    $data = get_page_by_path('parametre-date-et-donne-financiere');
+    $data = get_fields($data->ID);
+
+
     ?>
+    <script>
+        const multiplierA1 = <?= $data['multiplication_investissement_annee']['a1'] ?>;
+        const multiplierA2 = <?= $data['multiplication_investissement_annee']['a2'] ?>;
+        const multiplierA3 = <?= $data['multiplication_investissement_annee']['a3'] ?>;
+        const multiplierA4 = <?= $data['multiplication_investissement_annee']['a4'] ?>;
+        const multiplierA5 = <?= $data['multiplication_investissement_annee']['a5'] ?>;
+    </script>
 
         <div class="wrapper" id="page-wrapper">
 
