@@ -5,6 +5,8 @@ $results = $wpdb->get_results("SELECT meta_key, meta_value, p.guid FROM {$wpdb->
 WHERE (meta_key IN ('_give_set_goal', '_give_form_goal_progress', '_give_form_earnings', '_give_form_sales') 
            AND p.post_name = 'donation-form' AND p.post_title LIKE '%validate%')" , OBJECT);
 
+$url = get_site_url();
+
 // cut in array value for get only int
 $amount = explode('.', $results[3]->meta_value);
 // cut amount with space
@@ -21,15 +23,16 @@ if (strlen($pseudo) > 1 and strlen($comment) > 1) {
     );
 
     wp_insert_comment($data);
-    wp_redirect('http://localhost/wordpress/');
+    wp_redirect($url.'/#commentaire');
     exit;
 }
 $date = date_create();
-$paiment = get_page_by_path('paiment');
-$end_date = get_field('date_fin', $paiment->ID);
-$end_date = date_create($end_date);
+$data = get_page_by_path('parametre-date-et-donne-financiere');
+$data = get_fields($data->ID);
+var_dump($data);
+$end_date = date_create($data['date_fin']);
 $end_date = date_diff($date, $end_date);
-$end_date = $end_date->format('%d');
+$end_date = $end_date->days;
 defined('ABSPATH') || exit;
 
 get_header();
@@ -62,6 +65,13 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
 ?>
 
 <body>
+    <script>
+        const multiplierA1 = <?= $data['multiplication_investissement_annee']['a1'] ?>;
+        const multiplierA2 = <?= $data['multiplication_investissement_annee']['a2'] ?>;
+        const multiplierA3 = <?= $data['multiplication_investissement_annee']['a3'] ?>;
+        const multiplierA4 = <?= $data['multiplication_investissement_annee']['a4'] ?>;
+        const multiplierA5 = <?= $data['multiplication_investissement_annee']['a5'] ?>;
+    </script>
 <header class="bg-primary px-3 py-6 mt-5">
     <div class="container-xl d-flex justify-content-between align-items-center text-white">
         <div class="col-7 px-0">
@@ -118,7 +128,7 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
             <span id="errorMessage" class="hiden mb-1 text-danger">Veuillez entrez un chiffre valable</span>
         </from>
         <div class="w-75">
-            <a href="#" class="btn btn-outline-primary w-100">CONTRAT INVESTISSEUR (PDF)</a>
+            <a href="<?= $data['contrat'] ?>" target="_blank" class="btn btn-outline-primary w-100">CONTRAT INVESTISSEUR (PDF)</a>
         </div>
     </div>
     <div class="ff-ssp w-75 mx-auto mb-6 mt-4">
@@ -341,7 +351,7 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
                         <div class="w-90 ff-ssp">
                             <p class="font-weight-medium mb-2"><?= $comment->comment_author ?></p>
                             <p class="fs-2"><?= $comment->comment_content ?></p>
-                            <p class="fs-2 text-black-50 mb-3"><?= $comDate->format('%d') ?> jours</p>
+                            <p class="fs-2 text-black-50 mb-3"><?= $comDate->days ?> jours</p>
                         </div>
                     </div>
                     <?php if (count($replys) > 0) { ?>
@@ -350,7 +360,7 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
                             <div class="w-90 ff-ssp">
                                 <p class="font-weight-medium mb-2"><?= $reply->comment_author ?></p>
                                 <p class="fs-2"><?= $reply->comment_content ?></p>
-                                <p class="fs-2 text-black-50 mb-3"><?= $replyDate->format('%d') ?> jours</p>
+                                <p class="fs-2 text-black-50 mb-3"><?= $replyDate->days ?> jours</p>
                             </div>
                         </div>
                     <?php } ?>

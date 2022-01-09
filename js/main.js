@@ -44,12 +44,6 @@ function calculInvest() {
     errorMsg.classList.toggle('active', compareReg === false);
     if(compareReg) {
 
-        const multiplierA1 = 0.0603;
-        const multiplierA2 = 0.2745;
-        const multiplierA3 = 0.7533;
-        const multiplierA4 = 1.7523;
-        const multiplierA5 = 3;
-
         val1 = input * multiplierA1;
         val2 = input * multiplierA2;
         val3 = input * multiplierA3;
