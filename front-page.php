@@ -1,14 +1,31 @@
 <?php
 
-$results = $wpdb->get_results("SELECT meta_key, meta_value, p.guid FROM {$wpdb->prefix}give_formmeta f 
-    JOIN {$wpdb->prefix}posts p  on f.form_id = p.ID 
-WHERE (meta_key IN ('_give_set_goal', '_give_form_goal_progress', '_give_form_earnings', '_give_form_sales') 
-           AND p.post_name = 'donation-form' AND p.post_title LIKE '%validate%')", OBJECT);
+$link = $wpdb->get_results("SELECT guid FROM {$wpdb->prefix}posts WHERE post_title LIKE '%validate%' AND post_name = 'donation-form'", OBJECT);
+
+$total = $wpdb->get_results("SELECT meta_key, meta_value FROM {$wpdb->prefix}give_formmeta f
+    JOIN {$wpdb->prefix}posts p  on f.form_id = p.ID
+WHERE meta_key = '_give_form_earnings'
+           AND p.post_name = 'donation-form' AND p.post_title LIKE '%validate%'", OBJECT);
+
+$progress = $wpdb->get_results("SELECT meta_key, meta_value FROM {$wpdb->prefix}give_formmeta f
+    JOIN {$wpdb->prefix}posts p  on f.form_id = p.ID
+WHERE meta_key = '_give_form_goal_progress'
+           AND p.post_name = 'donation-form' AND p.post_title LIKE '%validate%'", OBJECT);
+
+$goal = $wpdb->get_results("SELECT meta_key, meta_value FROM {$wpdb->prefix}give_formmeta f
+    JOIN {$wpdb->prefix}posts p  on f.form_id = p.ID
+WHERE meta_key = '_give_set_goal'
+           AND p.post_name = 'donation-form' AND p.post_title LIKE '%validate%'", OBJECT);
+
+$donors = $wpdb->get_results("SELECT COUNT(id) as nb FROM {$wpdb->prefix}give_donors ", OBJECT);
 
 $url = get_site_url();
-
+var_dump($total);
+var_dump($progress);
+var_dump($goal);
+var_dump($donors);
 // cut in array value for get only int
-$amount = explode('.', $results[3]->meta_value);
+$amount = explode('.', $goal[0]->meta_value);
 // cut amount with space
 $amount = strrev(chunk_split(strrev($amount[0]), 3, ' '));
 
@@ -85,16 +102,16 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
             <h3 class="mt-5 font-weight-bold fs-7">Merci de votre soutien !</h3>
             <div class="w-75 mt-5">
                 <div class="w-100 h-16px bg-white rounded overflow-hidden">
-                    <div class="h-100 rounded bg-secondary" style="width: <?= $results[1]->meta_value ?>%"></div>
+                    <div class="h-100 rounded bg-secondary" style="width: <?= $progress[0]->meta_value ?>%"></div>
                 </div>
                 <div class="d-flex justify-content-between mt-2">
-                    <p class="fs-4"><?= $results[0]->meta_value ?> €</p>
-                    <p class="fs-4"><?= $results[1]->meta_value ?> %</p>
+                    <p class="fs-4"><?= $total[0]->meta_value ?> €</p>
+                    <p class="fs-4"><?= $progress[0]->meta_value ?> %</p>
                 </div>
             </div>
             <div class="d-flex flex-row w-75 mt-4 d-flex justify-content-between">
                 <div class="d-flex align-items-center flex-column">
-                    <p class="mb-0 font-weight-bold fs-4 ff-ssp"><?= $results[2]->meta_value ?></p>
+                    <p class="mb-0 font-weight-bold fs-4 ff-ssp"><?= $donors[0]->nb ?></p>
                     <p class="fs-2">Investissements</p>
                 </div>
                 <div class="d-flex align-items-center flex-column">
@@ -107,7 +124,7 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
                 </div>
             </div>
             <div class="btn btn-secondary w-75 mb-5 mt-4 py-2">
-                <a href="<?= $results[0]->guid ?>" class="text-uppercase my-1 font-weight-bold btn-invest fs-7 ff-ssp">Investir</a>
+                <a href="<?= $link[0]->guid ?>" class="text-uppercase my-1 font-weight-bold btn-invest fs-7 ff-ssp">Investir</a>
             </div>
         </div>
     </div>
