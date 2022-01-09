@@ -274,6 +274,7 @@ p{
 @media (max-width:768px) {
     .nav-menu{
         visibility: hidden;
+        position: absolute;
     }
     .navbar{
         align-content: start;
@@ -286,7 +287,6 @@ p{
     visibility: visible;
     flex-direction: column;
     align-items: center;
-    position: absolute;
     padding: 0;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -298,7 +298,6 @@ p{
 .menuWP-element-active{
     flex-direction: column;
     align-items: center;
-    position: absolute;
     padding: 0;
     left: 50%;
     transform: translate(-50%, -50%);
