@@ -3,7 +3,7 @@
 $results = $wpdb->get_results("SELECT meta_key, meta_value, p.guid FROM {$wpdb->prefix}give_formmeta f 
     JOIN {$wpdb->prefix}posts p  on f.form_id = p.ID 
 WHERE (meta_key IN ('_give_set_goal', '_give_form_goal_progress', '_give_form_earnings', '_give_form_sales') 
-           AND p.post_name = 'donation-form' AND p.post_title LIKE '%validate%')" , OBJECT);
+           AND p.post_name = 'donation-form' AND p.post_title LIKE '%validate%')", OBJECT);
 
 $url = get_site_url();
 
@@ -23,7 +23,7 @@ if (strlen($pseudo) > 1 and strlen($comment) > 1) {
     );
 
     wp_insert_comment($data);
-    wp_redirect($url.'/#commentaire');
+    wp_redirect($url . '/#commentaire');
     exit;
 }
 $date = date_create();
@@ -63,14 +63,14 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
 
 ?>
 
-<body>
-    <script>
-        const multiplierA1 = <?= $data['multiplication_investissement_annee']['a1'] ?>;
-        const multiplierA2 = <?= $data['multiplication_investissement_annee']['a2'] ?>;
-        const multiplierA3 = <?= $data['multiplication_investissement_annee']['a3'] ?>;
-        const multiplierA4 = <?= $data['multiplication_investissement_annee']['a4'] ?>;
-        const multiplierA5 = <?= $data['multiplication_investissement_annee']['a5'] ?>;
-    </script>
+    <body>
+<script>
+    const multiplierA1 = <?= $data['multiplication_investissement_annee']['a1'] ?>;
+    const multiplierA2 = <?= $data['multiplication_investissement_annee']['a2'] ?>;
+    const multiplierA3 = <?= $data['multiplication_investissement_annee']['a3'] ?>;
+    const multiplierA4 = <?= $data['multiplication_investissement_annee']['a4'] ?>;
+    const multiplierA5 = <?= $data['multiplication_investissement_annee']['a5'] ?>;
+</script>
 <header class="bg-primary px-3 py-6 mt-5">
     <div class="container-xl d-flex justify-content-between align-items-center text-white">
         <div class="col-7 px-0">
@@ -127,7 +127,8 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
             <span id="errorMessage" class="hiden mb-1 text-danger">Veuillez entrez un chiffre valable</span>
         </from>
         <div class="w-75">
-            <a href="<?= $data['contrat'] ?>" target="_blank" class="btn btn-outline-primary w-100">CONTRAT INVESTISSEUR (PDF)</a>
+            <a href="<?= $data['contrat'] ?>" target="_blank" class="btn btn-outline-primary w-100">CONTRAT INVESTISSEUR
+                (PDF)</a>
         </div>
     </div>
     <div class="ff-ssp w-75 mx-auto mb-6 mt-4">
@@ -267,7 +268,7 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
             </div>
         </section>
         <section class="rounded bg-gradient-primary mb-5">
-            <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center py-6 text-white"><?= $fileds['texte_part8'] ?></h2>
+            <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center py-6 text-white"><?= $fileds['titre_part8'] ?></h2>
             <div class="d-flex flex-column align-content-between col-11 mx-auto pb-5">
                 <span class="bg-line"></span>
                 <?php
@@ -292,12 +293,27 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
             </div>
         </section>
         <section class="bg-gradient-primary mb-5 rounded">
-            <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center pt-4 pb-2 text-white"><?= $fileds['texte_part8'] ?></h2>
+            <h2 class="col-10 fs-8 font-weight-bold mx-auto text-center pt-4 pb-2 text-white"><?= $fileds['titre_part9'] ?></h2>
             <div class="mx-auto w-fit">
                 <?php displayImg($fileds['image_part9']['image_part9_web'], $fileds['image_part9']['image_part9_mobile']); ?>
             </div>
 
         </section>
+    </div>
+</section>
+<section class="d-flex container-fluid bg-primary" id="faq">
+    <div class="my-6 bg-white rounded container">
+        <p class="ff-ssp fs-6 mt-4">FAQ</p>
+        <?php
+        show_post('faq');
+        function show_post($path)
+        {
+            $post = get_page_by_path($path);
+            $content = apply_filters('the_content', $post->post_content);
+            echo $content;
+        }
+
+        ?>
     </div>
 </section>
 <section class="container-fluid d-flex flex-column justify-content-center bg-primary" id="commentaire">
@@ -368,21 +384,6 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
             endforeach;
             ?>
         </div>
-        <a href="" class="btn btn-primary text-white px-4 py-2 rounded font-weight-medium my-5 w-fit mx-auto">Voir plus</a>
-    </div>
-</section>
-<section class="d-flex container-fluid bg-primary" id="faq">
-    <div class="my-6 bg-white rounded container">
-        <p class="ff-ssp fs-6 mt-4">FAQ</p>
-        <?php
-        show_post('faq');
-        function show_post($path)
-        {
-            $post = get_page_by_path($path);
-            $content = apply_filters('the_content', $post->post_content);
-            echo $content;
-        }
-        ?>
     </div>
 </section>
 <?php
