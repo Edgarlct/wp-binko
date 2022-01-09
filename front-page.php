@@ -29,7 +29,6 @@ if (strlen($pseudo) > 1 and strlen($comment) > 1) {
 $date = date_create();
 $data = get_page_by_path('parametre-date-et-donne-financiere');
 $data = get_fields($data->ID);
-var_dump($data);
 $end_date = date_create($data['date_fin']);
 $end_date = date_diff($date, $end_date);
 $end_date = $end_date->days;
