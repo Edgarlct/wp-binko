@@ -20,10 +20,6 @@ WHERE meta_key = '_give_set_goal'
 $donors = $wpdb->get_results("SELECT COUNT(id) as nb FROM {$wpdb->prefix}give_donors ", OBJECT);
 
 $url = get_site_url();
-var_dump($total);
-var_dump($progress);
-var_dump($goal);
-var_dump($donors);
 // cut in array value for get only int
 $amount = explode('.', $goal[0]->meta_value);
 // cut amount with space
