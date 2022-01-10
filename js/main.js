@@ -15,7 +15,7 @@ const reg = new RegExp('^[0-9]*\[.]?[0-9]{0,2}$');
 const myChart = new Chart(canva, {
     type: 'line',
     data: {
-        labels: ['Années 0', 'Années 1', 'Années 2', 'Années 3', 'Années 4', 'Années 5'],
+        labels: ['Année 0', 'Année 1', 'Année 2', 'Année 3', 'Année 4', 'Année 5'],
         datasets: [{
             label: 'Retour sur investissement en €',
             data: [0, val1, val2, val3, val4, val5],
