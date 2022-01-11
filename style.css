@@ -476,6 +476,10 @@ input:focus{
 .color-send:hover{
     color: white!important;
 }
+.signature{
+    background-color: lightgrey;
+    width: 100%;
+}
 /*-----------*/
 /*Temporaire*/
 /*cacher admin bar*/
