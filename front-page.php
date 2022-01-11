@@ -1,21 +1,21 @@
 <?php
 
-$link = $wpdb->get_results("SELECT guid FROM {$wpdb->prefix}posts WHERE post_title LIKE '%validate%' AND post_name = 'donation-form'", OBJECT);
+$link = $wpdb->get_results("SELECT guid FROM {$wpdb->prefix}posts WHERE post_title LIKE '%validate%' AND post_status = 'publish'", OBJECT);
 
 $total = $wpdb->get_results("SELECT meta_key, meta_value FROM {$wpdb->prefix}give_formmeta f
     JOIN {$wpdb->prefix}posts p  on f.form_id = p.ID
 WHERE meta_key = '_give_form_earnings'
-           AND p.post_name = 'donation-form' AND p.post_title LIKE '%validate%'", OBJECT);
+           AND p.post_status = 'publish' AND p.post_title LIKE '%validate%'", OBJECT);
 
 $progress = $wpdb->get_results("SELECT meta_key, meta_value FROM {$wpdb->prefix}give_formmeta f
     JOIN {$wpdb->prefix}posts p  on f.form_id = p.ID
 WHERE meta_key = '_give_form_goal_progress'
-           AND p.post_name = 'donation-form' AND p.post_title LIKE '%validate%'", OBJECT);
+           AND p.post_status = 'publish' AND p.post_title LIKE '%validate%'", OBJECT);
 
 $goal = $wpdb->get_results("SELECT meta_key, meta_value FROM {$wpdb->prefix}give_formmeta f
     JOIN {$wpdb->prefix}posts p  on f.form_id = p.ID
 WHERE meta_key = '_give_set_goal'
-           AND p.post_name = 'donation-form' AND p.post_title LIKE '%validate%'", OBJECT);
+           AND p.post_status = 'publish' AND p.post_title LIKE '%validate%'", OBJECT);
 
 $donors = $wpdb->get_results("SELECT COUNT(id) as nb FROM {$wpdb->prefix}give_donors ", OBJECT);
 
@@ -85,18 +85,19 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
     const multiplierA5 = <?= $data['multiplication_investissement_annee']['a5'] ?>;
 </script>
 <header class="bg-primary px-3 py-6 mt-5">
-    <div class="container-xl d-flex justify-content-between align-items-center text-white">
-        <div class="col-7 px-0">
+    <div class="container-xl d-flex justify-content-between align-items-center flex-lg-row flex-column text-white">
+        <div class="col-lg-7 col-md-10 col-12 px-0">
             <h1 class="font-weight-bold mt-0 test">Binko, la poubelle intelligente</h1>
-            <p class="ff-roboto fs-4 font-italic mb-4">La poubelle qui changera votre vie</p>
+            <p class="ff-roboto fs-4 font-italic mb-4">La poubelle qui reconnaît,
+                broie et trie les déchets automatiquement</p>
             <iframe class="video" src="https://www.youtube.com/embed/k5IyKIN10yU"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
         </div>
-        <div class="border border-secondary rounded d-flex flex-column align-items-center my-3 px-4">
-            <h3 class="mt-5 font-weight-bold fs-7">Merci de votre soutien !</h3>
-            <div class="w-75 mt-5">
+        <div class="border border-secondary rounded d-flex flex-column align-items-center my-lg-3 mt-4 px-sm-4 px-2">
+            <h3 class="mt-5 font-weight-bold fs-7 text-center">Merci de votre soutien !</h3>
+            <div class="col-sm-9 col-11 px-0 mt-5">
                 <div class="w-100 h-16px bg-white rounded overflow-hidden">
                     <div class="h-100 rounded bg-secondary" style="width: <?= $progress[0]->meta_value ?>%"></div>
                 </div>
@@ -105,10 +106,10 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
                     <p class="fs-4"><?= $progress[0]->meta_value ?> %</p>
                 </div>
             </div>
-            <div class="d-flex flex-row w-75 mt-4 d-flex justify-content-between">
+            <div class="d-flex flex-xs-row flex-column col-sm-9 col-11 px-0 mt-4 d-flex justify-content-between">
                 <div class="d-flex align-items-center flex-column">
                     <p class="mb-0 font-weight-bold fs-4 ff-ssp"><?= $donors[0]->nb ?></p>
-                    <p class="fs-2">Investissements</p>
+                    <p class="fs-2">Investisseurs</p>
                 </div>
                 <div class="d-flex align-items-center flex-column">
                     <p class="mb-0 font-weight-bold fs-4 ff-ssp"><?= $amount ?> €</p>
@@ -119,7 +120,7 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
                     <p class="fs-2">Restants</p>
                 </div>
             </div>
-            <div class="btn btn-secondary w-75 mb-5 mt-4 py-2">
+            <div class="btn btn-secondary col-sm-9 col-11 mb-5 mt-4 py-2">
                 <a href="<?= $link[0]->guid ?>" class="text-uppercase my-1 font-weight-bold btn-invest fs-7 ff-ssp">Investir</a>
             </div>
         </div>
@@ -131,7 +132,7 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
             investissement initial</p>
         <p class="ff-ssp fs-6">Simulez votre investissement</p>
         <from class="w-75">
-            <label for="amount" class="ff-roboto">Montant investit :</label>
+            <label for="amount" class="ff-roboto">Montant investi :</label>
             <div class="d-flex position-relative mb-3">
                 <input id="amount" class="w-100 border-primary rounded pl-1 py-2" type="text" name="amount"
                        placeholder="0" oninput="calculInvest()">
@@ -145,7 +146,7 @@ function displayImg($imgSrc = false, $imgSrcMobile = false, $displayImgMobile = 
         </div>
     </div>
     <div class="ff-ssp w-75 mx-auto mb-6 mt-4">
-        <p>Je recevrais tous les trimestres :</p>
+        <p>Vous recevrez tous les trimestres :</p>
         <p><span class="fs-5 color-secondary font-weight-bold">0%</span> du chiffre d’affaires pendant 5 ans </p>
         <p>Total sur 5 ans de : <span id="totalAmount" class="fs-5 color-secondary font-weight-bold">0€</span></p>
         <canvas id="myChart" width="400" height="200"></canvas>

@@ -7,7 +7,7 @@
  * @package Understrap
  */
 global $wpdb;
-$link = $wpdb->get_results("SELECT guid FROM {$wpdb->prefix}posts WHERE post_title LIKE '%validate%' AND post_name = 'donation-form'", OBJECT);
+$link = $wpdb->get_results("SELECT guid FROM {$wpdb->prefix}posts WHERE post_title LIKE '%validate%' AND post_status = 'publish'", OBJECT);
 $link = $link[0]->guid;
 
 // Exit if accessed directly.

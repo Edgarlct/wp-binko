@@ -29,8 +29,8 @@
         const multiplierA4 = <?= $data['multiplication_investissement_annee']['a4'] ?>;
         const multiplierA5 = <?= $data['multiplication_investissement_annee']['a5'] ?>;
     </script>
-
-        <div class="wrapper" id="page-wrapper">
+    <script> var status = 'ok'</script>
+    <div class="wrapper" id="page-wrapper">
 
             <div class="<?php echo esc_attr($container); ?>" id="content" tabindex="-1">
 
@@ -38,7 +38,7 @@
 
                     <section class="container-fluid d-flex flex-column justify-content-start col-lg-6 mx-auto"
                              id="investissement">
-                        <div class="d-flex justify-content-center flex-column align-items-center">
+                        <div class="d-flex flex-column align-items-center mt-5">
                             <p class="fs-7 font-weight-bold text-center">Multipliez par <span class="color-secondary fs-10">3</span>
                                 votre
                                 investissement initial</p>
@@ -54,8 +54,12 @@
                                 <span id="errorMessage"
                                       class="hiden mb-1 text-danger">Veuillez entrez un chiffre valable</span>
                             </from>
-                            <div class="w-75">
-                                <a href="<?= $data['contrat'] ?>" class="btn btn-outline-primary w-100">CONTRAT INVESTISSEUR (PDF)</a>
+                            <div class="col-9 px-0">
+                                <p class="fs-2">Voici le contrat-type que nous avons élaboré avec notre avocat.
+                                    Veuillez prendre connaissance de ce dernier ci-dessous. Vous allez recevoir votre contrat personnel dans les prochains jours, qu’il faudra signer électroniquement et renvoyer.</p>
+                                <div class="">
+                                    <a href="<?= $data['contrat'] ?>" class="btn btn-outline-primary w-100" target="_blank">CONTRAT INVESTISSEUR (PDF)</a>
+                                </div>
                             </div>
                         </div>
                         <div class="ff-ssp w-75 mx-auto mb-6 mt-4">

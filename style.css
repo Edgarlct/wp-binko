@@ -457,13 +457,32 @@ footer .navbar-brand{
 .rounded-gif > img{
     border-radius: 7px;
 }
+
+@media (min-width: 350px) {
+    .flex-xs-row{
+        -webkit-flex-direction: row !important;
+        -ms-flex-direction: row !important;
+        flex-direction: row !important;
+    }
+}
+
+input:focus{
+    box-shadow: 0 0 0 .2rem hsla(183, 57%, 52%, .80) !important;
+}
+
+.color-send{
+    color: #3FC2CA!important;
+}
+.color-send:hover{
+    color: white!important;
+}
 /*-----------*/
 /*Temporaire*/
 /*cacher admin bar*/
 /*---------*/
-.nojq{
-    visibility: hidden !important;
-}
+/*.nojq{*/
+/*    visibility: hidden !important;*/
+/*}*/
 
 /*.navbar{*/
 /*    visibility: hidden !important;*/
